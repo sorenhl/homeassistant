@@ -19,8 +19,7 @@
     platform: event
     event_type: homeassistant_start
   action:
-    - delay:
-      minutes: 1
+    - delay: 00:00:30
     - service: shell_command.load_input_settings
       data_template:
         key: !secret http_password
