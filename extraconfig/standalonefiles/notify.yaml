@@ -1,7 +1,7 @@
 - platform: pushover
   name: pushover
-  api_key: agn2np7qskd4yfvrfkscp7zqjrqy7k
-  user_key: umt4d4a9rsfn7j6x7sqsfvacf8bhs8
+  api_key: !secret pushover_api_key
+  user_key: !secret pushover_user_key
 - platform: webostv
   host: 192.168.1.81
   name: livingroom_tv
