@@ -1,0 +1,34 @@
+  room_livingroom:
+    name: Stuen
+    entities:
+     - group.lights_livingroom
+     - climate.danfoss_z_thermostat_014g0013_heating_1_3_1
+     - climate.danfoss_z_thermostat_014g0013_heating_1_4_1
+     - sensor.aeotec_zw100_multisensor_6_luminance_2_3
+     - sensor.aeotec_zw100_multisensor_6_relative_humidity_2_5
+     - sensor.aeotec_zw100_multisensor_6_temperature_2_1
+     - sensor.aeotec_zw100_multisensor_6_ultraviolet_2_27
+     - sensor.fibaro_system_fgs223_double_relay_power_13_8
+
+  room_oliver:
+    name: Olivers værelse
+    entities:
+     - group.lights_oliver
+     - climate.danfoss_z_thermostat_014g0013_heating_1_8_1
+  
+  room_hallway:
+    name: Gangen
+    entities:
+     - group.lights_hallway
+     - climate.danfoss_z_thermostat_014g0013_heating_1_6_1
+
+  room_office:
+    name: Kontoret
+    entities:
+     - group.lights_office
+     - climate.danfoss_z_thermostat_014g0013_heating_1_9_1
+
+  automation_override:
+    name: Automation override
+    entities:
+     - input_boolean.automation_disable_exterior_lights

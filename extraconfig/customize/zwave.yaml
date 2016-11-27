@@ -1,0 +1,177 @@
+  # Thermostats
+  climate.danfoss_z_thermostat_014g0013_heating_1_3_1:
+    friendly_name: Stuen mod haven
+    icon: mdi:thermometer-lines
+  climate.danfoss_z_thermostat_014g0013_heating_1_4_1:
+    friendly_name: Stuen mod vejen
+    icon: mdi:thermometer-lines
+  climate.danfoss_z_thermostat_014g0013_heating_1_5_1:
+    friendly_name: Køkkenet
+    icon: mdi:thermometer-lines
+  climate.danfoss_z_thermostat_014g0013_heating_1_6_1:
+    friendly_name: Gangen
+    icon: mdi:thermometer-lines
+  climate.danfoss_z_thermostat_014g0013_heating_1_7_1:
+    friendly_name: Soveværelset
+    icon: mdi:thermometer-lines
+  climate.danfoss_z_thermostat_014g0013_heating_1_8_1:
+    friendly_name: Olivers værelse
+    icon: mdi:thermometer-lines
+  climate.danfoss_z_thermostat_014g0013_heating_1_9_1:
+    friendly_name: Kontoret
+    icon: mdi:thermometer-lines
+  climate.danfoss_z_thermostat_014g0013_heating_1_10_1:
+    friendly_name: Badeværelset
+    icon: mdi:thermometer-lines
+
+  #########################
+  # FUGA KONTAKTER        #
+  #########################
+
+  #Fuga ved spisebordet
+  switch.logic_soft_zhc5010_wall_switch_switch_11_0: #En eller anden generel ting
+    hidden: true
+  switch.logic_soft_zhc5010_wall_switch_switch_11_0_2:
+    friendly_name: Stuen 1
+    icon: mdi:radiobox-marked
+  switch.logic_soft_zhc5010_wall_switch_switch_11_0_3:
+    friendly_name: Stuen 2
+    icon: mdi:radiobox-marked
+  switch.logic_soft_zhc5010_wall_switch_switch_11_0_4:
+    friendly_name: Stuen 3
+    icon: mdi:radiobox-marked
+  switch.logic_soft_zhc5010_wall_switch_switch_11_0_5:
+    friendly_name: Stuen 4
+    icon: mdi:radiobox-marked
+
+  #########################
+  # RALÆER                #
+  #########################
+
+  #Kontakt henne ved hjørnet af Stuen
+  switch.fibaro_system_fgs223_double_relay_switch_13_0:
+    friendly_name: Glasskabet
+    icon: mdi:power-socket
+  switch.fibaro_system_fgs223_double_relay_switch_13_2:
+    friendly_name: Denne bliver ikke brugt
+    hidden: true
+  sensor.fibaro_system_fgs223_double_relay_alarm_level_13_1:
+    hidden: true
+    friendly_name: FIBARO System FGS223 Double Relay Alarm Level
+  sensor.fibaro_system_fgs223_double_relay_alarm_type_13_0:
+    hidden: true
+    friendly_name: FIBARO System FGS223 Double Relay Alarm Type
+  sensor.fibaro_system_fgs223_double_relay_energy_13_0:
+    #hidden: true
+    friendly_name: Glasskabet
+    #unit_of_measurement: kWh
+  sensor.fibaro_system_fgs223_double_relay_energy_13_0_2:
+    hidden: true
+    friendly_name: FIBARO System FGS223 Double Relay Energy
+    #unit_of_measurement: kWh
+  sensor.fibaro_system_fgs223_double_relay_exporting_13_32:
+    hidden: true
+    friendly_name: FIBARO System FGS223 Double Relay Exporting
+  sensor.fibaro_system_fgs223_double_relay_exporting_13_32_2:
+    hidden: true
+    friendly_name: FIBARO System FGS223 Double Relay Exporting
+  sensor.fibaro_system_fgs223_double_relay_heat_13_7: 
+    hidden: true
+    friendly_name: FIBARO System FGS223 Double Relay Heat
+  sensor.fibaro_system_fgs223_double_relay_power_13_8:
+    friendly_name: Glasskabet (Watt)
+    #unit_of_measurement: W
+  sensor.fibaro_system_fgs223_double_relay_power_13_8_2:
+    hidden: true
+    friendly_name: FIBARO System FGS223 Double Relay Power
+    #unit_of_measurement: W
+  sensor.fibaro_system_fgs223_double_relay_power_management_13_11:
+    hidden: true
+    friendly_name: FIBARO System FGS223 Double Relay Power Management
+  sensor.fibaro_system_fgs223_double_relay_sourcenodeid_13_2:
+    hidden: true
+
+  #########################
+  # RUMFØLERER            #
+  #########################
+
+  # Føler 1
+  binary_sensor.aeotec_zw100_multisensor_6_sensor_2_0:
+    friendly_name: Føler 1 Sensor
+    hidden: true
+  sensor.aeotec_zw100_multisensor_6_alarm_level_2_1:
+    friendly_name: Føler 1 Alarm Level
+  sensor.aeotec_zw100_multisensor_6_alarm_type_2_0:
+    friendly_name: Føler 1 Alarm Type
+  sensor.aeotec_zw100_multisensor_6_luminance_2_3:
+    friendly_name: Lysindfald
+  sensor.aeotec_zw100_multisensor_6_relative_humidity_2_5:
+    friendly_name: Luftfugtighed
+  sensor.aeotec_zw100_multisensor_6_temperature_2_1:
+    friendly_name: Temperatur
+  sensor.aeotec_zw100_multisensor_6_ultraviolet_2_27:
+    friendly_name: Ultraviolet
+
+
+  #########################
+  # DØR/Vindue SENSOR     #
+  #########################
+
+  # Dør til haven
+  sensor.fibaro_system_fgk10x_door_opening_sensor_access_control_12_9:
+    friendly_name: Havedør
+  sensor.fibaro_system_fgk10x_door_opening_sensor_alarm_level_12_1:
+    friendly_name: Havedør Alarm Level
+    hidden: true
+  sensor.fibaro_system_fgk10x_door_opening_sensor_alarm_type_12_0:
+    friendly_name: Havedør Alarm Type
+    hidden: true
+  sensor.fibaro_system_fgk10x_door_opening_sensor_burglar_12_10:
+    friendly_name: Havedør Sensor Burglar
+    hidden: true
+  sensor.fibaro_system_fgk10x_door_opening_sensor_general_12_0:
+    friendly_name: Havedør General
+    hidden: true
+  sensor.fibaro_system_fgk10x_door_opening_sensor_sourcenodeid_12_2:
+    friendly_name: Havedør Opening 
+    hidden: true
+
+  # Hoveddør
+  sensor.fibaro_system_fgk10x_door_opening_sensor_access_control_14_9:
+    friendly_name: Hoveddør
+  sensor.fibaro_system_fgk10x_door_opening_sensor_alarm_level_14_1:
+    friendly_name: Hoveddør Alarm Level
+    hidden: true
+  sensor.fibaro_system_fgk10x_door_opening_sensor_alarm_type_14_0:
+    friendly_name: Hoveddør Alarm Type
+    hidden: true
+  sensor.fibaro_system_fgk10x_door_opening_sensor_burglar_14_10:
+    friendly_name: Hoveddør Sensor Burglar
+    hidden: true
+  sensor.fibaro_system_fgk10x_door_opening_sensor_general_14_0:
+    friendly_name: Hoveddør General
+    hidden: true
+  sensor.fibaro_system_fgk10x_door_opening_sensor_sourcenodeid_14_2:
+    friendly_name: Hoveddør Opening 
+    hidden: true
+
+# Hoveddør
+  sensor.fibaro_system_fgk10x_door_opening_sensor_access_control_15_9:
+    friendly_name: Bagdør
+  sensor.fibaro_system_fgk10x_door_opening_sensor_alarm_level_15_1:
+    friendly_name: Bagdør Alarm Level
+    hidden: true
+  sensor.fibaro_system_fgk10x_door_opening_sensor_alarm_type_15_0:
+    friendly_name: Bagdør Alarm Type
+    hidden: true
+  sensor.fibaro_system_fgk10x_door_opening_sensor_burglar_15_10:
+    friendly_name: Bagdør Sensor Burglar
+    hidden: true
+  sensor.fibaro_system_fgk10x_door_opening_sensor_general_15_0:
+    friendly_name: Bagdør General
+    hidden: true
+  sensor.fibaro_system_fgk10x_door_opening_sensor_sourcenodeid_15_2:
+    friendly_name: Bagdør Opening 
+    hidden: true
+
+    

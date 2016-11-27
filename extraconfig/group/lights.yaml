@@ -1,0 +1,51 @@
+  lights_interior:
+    name: Indendørs lys
+    entities:
+     - group.lights_livingroom
+     - group.lights_hallway
+     - group.lights_oliver
+     - group.lights_office
+
+  lights_exterior:
+    name: Lys udenfor
+    entities:
+     - light.fordren
+     - light.bagdren
+
+
+  lights_livingroom:
+    name: Lys i stuen
+    icon: mdi:lightbulb
+    entities:
+     - light.lampe_i_stuen
+     - light.lampe_over_spisebord
+     - switch.fibaro_system_fgs223_double_relay_switch_13_0 # Glasskabet
+
+  lights_hallway:
+    name: Lys i gangen
+    icon: mdi:lightbulb
+    entities:
+     - light.loftlys_i_gangen
+
+  lights_oliver:
+    name: Olivers værelse
+    icon: mdi:lightbulb
+    entities:
+     - light.loftlys_p_olivers_vrelse
+
+  lights_office:
+    name: Kontoret
+    icon: mdi:lightbulb
+    entities:
+     - light.loftlys_p_kontoret
+
+  hue_lights:
+    name: Hue lights_office
+    entities:
+    # - light.fordren
+    # - light.bagdren
+     - light.loftlys_p_kontoret
+     - light.loftlys_p_olivers_vrelse
+     - light.loftlys_i_gangen
+     - light.lampe_i_stuen
+     - light.lampe_over_spisebord

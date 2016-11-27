@@ -1,0 +1,29 @@
+  alarm_lights_loop:
+    alias: Lights flashing loop
+    sequence:
+      - service: script.turn_on
+        data:
+          entity_id: script.alarm_lights_flashing  
+
+  alarm_lights_flashing:
+    alias: Lights flashing
+    sequence:
+      - service: logbook.log
+        data:
+          name: "Alarm lights flashing: "
+          message: "Start flashing"
+      - service: light.turn_on
+        data:
+          entity_id: group.hue_lights
+          rgb_color: [255,0,0]
+          brightness: 1
+      - service: light.turn_on
+        data:
+          entity_id: group.hue_lights
+          rgb_color: [255,0,0]
+          brightness: 255
+          flash: long
+      - delay: 00:00:15
+      - service: script.turn_on
+        data:
+          entity_id: script.alarm_lights_loop

@@ -1,0 +1,73 @@
+  default_view:
+    view: yes
+    name: Home
+    icon: mdi:home
+    entities:
+     - device_tracker.soren
+     - device_tracker.louise
+     - group.room_livingroom
+     - group.room_oliver
+     - group.lights_hallway
+     - persistent_notification.1
+ 
+#      - group.living_room
+#      - group.dining_room
+#      - group.kitchen
+#      - group.bedroom
+#      - group._REDACTED_office
+#      - group._REDACTED_office
+#      - group.guest_bedroom
+#      - group.basement
+#      - group.interior
+#      - group.exterior_lights
+#      - group.automation_on_demand
+#      - group.garage
+
+
+  lights:
+    name: Lys
+    view: yes
+    icon: mdi:lightbulb-outline
+    entities:
+     - group.lights_livingroom
+     - group.lights_hallway
+     - group.lights_oliver
+     - group.lights_office
+     - group.lights_exterior
+
+  automation:
+    name: Automation
+    view: yes
+    icon: mdi:robot
+    entities:
+     - group.automation_override
+     - group.alarm
+     - group.climate_nightmode
+
+  sensors:
+    name: Sensors
+    view: yes
+    icon: mdi:gauge
+    entities:
+     - group.household
+    # - group.device_location
+    # - group.device_location_testing
+    # - group.weather
+    # - group.indoor_temperature
+    # - group.occupancy
+    # - group.doors
+     - group.speedtest
+     - group.system
+     - group.battery_levels
+     - group.doors
+     - group.movement
+     - group.measurement
+     - group.thermostats
+     - group.online_check
+
+  debug:
+    name: Debug
+    view: yes
+    entities:
+     - group.debug_livingroom
+     - group.debug_configurators

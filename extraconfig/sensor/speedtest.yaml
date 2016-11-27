@@ -1,0 +1,5 @@
+- platform: speedtest
+  minute: 30
+  monitored_conditions:
+    - download
+    - upload

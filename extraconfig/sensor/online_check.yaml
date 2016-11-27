@@ -1,0 +1,14 @@
+- platform: command_line
+  name: 'online_check_sonos_shell'
+  scan_interval: 15
+  command: '/usr/bin/nmap -p 5005 localhost | grep open &> /dev/null && echo success || echo fail'
+- platform: template
+  sensors:
+    online_check_sonos:
+      friendly_name: 'Sonos Controller'
+      value_template: >-
+        {% if 'success' in states('sensor.online_check_sonos_shell') %}
+          Online
+        {%- else -%}
+          Offline
+        {%- endif %}

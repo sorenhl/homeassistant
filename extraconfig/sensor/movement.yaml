@@ -1,0 +1,11 @@
+ - platform: template
+   sensors:
+     movement_livingroom:
+       friendly_name: 'Bevægelse i stuen'
+       value_template: >
+         {% if is_state('sensor.aeotec_zw100_multisensor_6_burglar_2_10', '8') %}
+           Ja
+         {% else %}
+           Nej
+         {% endif %}
+ 

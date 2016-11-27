@@ -1,0 +1,9 @@
+alarm_mode:
+  name: Alarm mode
+  options:
+   - 'Off'
+   - 'Silent alarm'
+   - 'Light alarm'
+   - 'Full alarm'
+  initial: 'Off'
+  icon: 'mdi:playlist-check'

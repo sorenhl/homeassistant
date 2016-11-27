@@ -1,0 +1,23 @@
+    
+  automation_override:
+    name: Automatiseringer 
+    entities:
+     - input_boolean.automation_disable_exterior_lights
+     - input_boolean.automation_disable_climate_nightmode
+
+  alarm:
+    name: Alarm
+    entities:
+     - input_boolean.alarm_enabled
+     - input_boolean.alarm_enable_noice
+     - input_boolean.alarm_enable_lights
+     - input_boolean.alarm_tripped
+
+  climate_nightmode:
+    name: Nattetilstand for thermostater
+    entities:
+     - input_select.clima_nightmode_from
+     - input_select.clima_nightmode_to
+     - input_slider.climate_temperature_day
+     - input_slider.climate_temperature_night
+     - input_boolean.automation_climate_nightmode

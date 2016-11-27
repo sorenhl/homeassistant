@@ -1,0 +1,19 @@
+  alarm_enabled:
+    name: Alarm Enabled
+    initial: off
+    icon: mdi:shield-outline
+
+  alarm_enable_noice:
+    name: Make noise
+    initial: off
+    icon: mdi:bullhorn
+
+  alarm_enable_lights:
+    name: Blink with lights
+    initial: off
+    icon: mdi:lightbulb
+
+  alarm_tripped:
+    name: Alarm Tripped
+    initial: off
+    icon: mdi:shield-outline

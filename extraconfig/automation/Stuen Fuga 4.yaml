@@ -1,0 +1,10 @@
+- alias: livingroom_fuga1_knap4_on
+  trigger:
+  - platform: state
+    entity_id: switch.logic_soft_zhc5010_wall_switch_switch_11_0_5
+    from: 'off'
+    to: 'on'
+  action:
+    service: notify.pushover
+    data:
+      message: Besked fra stikkontakten
