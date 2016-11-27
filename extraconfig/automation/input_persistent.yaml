@@ -1,6 +1,13 @@
  ## Save Input States to .ini - hass/saved_states
 - alias: "Save Input States to Settings.ini"
   trigger:
+  #Input sliders
+   - platform: state
+     entity_id: input_slider.climate_temperature_day
+   - platform: state
+     entity_id: input_slider.climate_temperature_night
+
+  #Input selects
    - platform: state
      entity_id: input_select.clima_nightmode_from
    - platform: state
