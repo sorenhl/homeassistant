@@ -1,0 +1,97 @@
+soren:
+  hide_if_away: false
+  mac: 80:BE:05:27:94:58
+  name: Soren
+  picture: https://graph.facebook.com/690297200/picture?type=large&w‌​idth=720&height=720
+  track: true
+
+louise:
+  hide_if_away: false
+  mac: 4C:66:41:A7:3F:AB
+  name: Louise
+  picture: https://graph.facebook.com/1492966648/picture?type=large&w‌​idth=720&height=720
+  track: true
+
+srenheisipadpro:
+  hide_if_away: false
+  mac: 84:89:AD:31:7E:A9
+  name: SrenHeisiPadPro
+  picture:
+  track: false
+
+raspberrypi:
+  hide_if_away: false
+  mac: B8:27:EB:15:3C:D5
+  name: raspberrypi
+  picture:
+  track: false
+
+smlpro:
+  hide_if_away: false
+  mac: 6C:40:08:90:4C:74
+  name: smlpro
+  picture:
+  track: false
+
+bedroomappletv:
+  hide_if_away: false
+  mac: 28:CF:DA:20:F4:E9
+  name: BedroomAppleTV
+  picture:
+  track: false
+
+srensapplewatch:
+  hide_if_away: false
+  mac: EC:AD:B8:23:B3:14
+  name: SrensAppleWatch
+  picture:
+  track: false
+
+philipshue:
+  hide_if_away: false
+  mac: 00:17:88:2D:35:49
+  name: Philips-hue
+  picture:
+  track: false
+
+appletv:
+  hide_if_away: false
+  mac: D0:03:4B:20:D7:1A
+  name: Apple-TV
+  picture:
+  track: false
+
+sonoszp:
+  hide_if_away: false
+  mac: B8:E9:37:7D:B4:3D
+  name: SonosZP
+  picture:
+  track: false
+
+lgwebostv:
+  hide_if_away: false
+  mac: C8:08:E9:95:C0:B7
+  name: LGwebOSTV
+  picture:
+  track: false
+
+smlsurfacepro4:
+  hide_if_away: false
+  mac: B4:AE:2B:EC:74:E4
+  name: SML-SURFACEPRO4
+  picture:
+  track: false
+
+android418d3bd09dbd086c:
+  hide_if_away: false
+  mac: BC:6E:64:E5:39:DB
+  name: android-418d3bd09dbd086c
+  picture:
+  track: false
+
+iphone:
+  hide_if_away: false
+  mac: 6C:8D:C1:05:75:7F
+  name: iPhone
+  picture:
+  track: false
