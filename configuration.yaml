@@ -1,0 +1,85 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: 56.9943
+  longitude: 9.9909
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 14
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Copenhagen
+  customize: !include_dir_merge_named extraconfig/customize
+
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables the frontend
+frontend:
+
+http:
+  api_password: !secret http_password
+  ssl_certificate: /home/pi/.homeassistant/fullchain.pem
+  ssl_key: /home/pi/.homeassistant/privkey.pem
+
+#Checks for available updates
+updater:
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+#conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+# Log stuff
+logger:
+  default: error
+  logs:
+    homeassistant.components.media_player: debug
+
+# Track the sun
+sun:
+
+zwave:
+  usb_path: /dev/ttyACM0
+
+
+media_player:
+ - platform: sonos
+ - platform: webostv
+   host: 192.168.1.81
+# hue
+light:
+  platform: hue
+  host: 192.168.1.125
+
+# bluetooth tracking
+device_tracker:
+  - platform: asuswrt
+    host: 192.168.1.1
+    username: admin
+    password: !secret router
+    protocol: telnet
+    consider_home: 360
+    home_interval: 10 
+    track_new_devices: no
+#  - platform: bluetooth_tracker
+#    track_new_devices: no
+
+#Groups for front-end
+group: !include_dir_merge_named extraconfig/group
+automation: !include_dir_merge_list extraconfig/automation
+shell_command: !include_dir_merge_named extraconfig/shell_command
+input_boolean: !include_dir_merge_named extraconfig/input_boolean
+input_select: !include_dir_merge_named extraconfig/input_select
+input_slider: !include_dir_merge_named extraconfig/input_slider
+notify: !include extraconfig/standalonefiles/notify.yaml
+script: !include_dir_merge_named extraconfig/script
+sensor: !include_dir_merge_list extraconfig/sensor
