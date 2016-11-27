@@ -1,0 +1,13 @@
+ ## Save Input States to .ini - hass/saved_states
+- alias: "Save Input States to Settings.ini"
+  trigger:
+   - platform: state
+     entity_id: input_select.clima_nightmode_from
+   - platform: state
+     entity_id: input_select.clima_nightmode_to
+  action:
+    service: shell_command.save_input_settings
+    data_template:
+      section: '{{ trigger.entity_id }}'
+      settings: '{{ trigger.entity_id }}'
+      value: "{{ trigger.to_state.state }}"
