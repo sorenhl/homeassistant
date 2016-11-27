@@ -1,0 +1,41 @@
+- alias: livingroom_fuga1_knap2_on
+  trigger:
+  - platform: state
+    entity_id: switch.logic_soft_zhc5010_wall_switch_switch_11_0_3
+    from: 'off'
+    to: 'on'
+  action:
+    service: light.turn_on 
+    entity_id: light.lampe_i_stuen
+    data:
+      brightness: 254
+  
+- alias: livingroom_fuga1_knap2_off
+  trigger:
+    - platform: state
+      entity_id: switch.logic_soft_zhc5010_wall_switch_switch_11_0_3
+      from: 'on'
+      to: 'off'
+  action:
+    service: light.turn_off
+    entity_id: light.lampe_i_stuen
+
+- alias: livingroom_fuga2_lamp_off
+  trigger:
+    - platform: state
+      entity_id: light.lampe_i_stuen
+      from: 'on'
+      to: 'off'
+  action:
+    service: switch.turn_off
+    entity_id: switch.logic_soft_zhc5010_wall_switch_switch_11_0_3
+
+- alias: livingroom_fuga2_lamp_on
+  trigger:
+    - platform: state
+      entity_id: light.lampe_i_stuen
+      from: 'off'
+      to: 'on'
+  action:
+    service: switch.turn_on
+    entity_id: switch.logic_soft_zhc5010_wall_switch_switch_11_0_3

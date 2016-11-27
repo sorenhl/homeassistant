@@ -1,0 +1,79 @@
+  household:
+    name: Husstand
+    entities:
+     - device_tracker.soren
+     - device_tracker.louise
+
+  speedtest:
+    name: Speed test
+    entities:
+     - sensor.speedtest_ping    
+     - sensor.speedtest_download
+     - sensor.speedtest_upload
+
+  system:
+    name: system
+    entities:
+     - sensor.cpu
+     - sensor.cpu_use
+     - sensor.ram_use
+     - sensor.ram_free
+     - sensor.since_last_boot
+     - updater.updater
+
+  battery_levels:
+   name: Batteriniveauer
+   entities:
+    - sensor.livingroom_movement_batt
+    - sensor.doors_havedor_batt
+    - sensor.doors_hoveddor_batt
+    - sensor.doors_bagdor_batt
+    - sensor.livingroom_thermostat1_batt
+    - sensor.livingroom_thermostat2_batt
+    - sensor.kitchen_thermostat_batt
+    - sensor.hallway_thermostat_batt
+    - sensor.bedroom_thermostat_batt
+    - sensor.oliver_thermostat_batt
+    - sensor.office_thermostat_batt
+    - sensor.bathroom_thermostat_batt
+
+  online_check:
+    name: Online check
+    entities:
+     - sensor.online_check_sonos
+  
+  doors:
+    name: Døre
+    entities:
+     - sensor.doors_hoveddor_openclosed
+     - sensor.doors_havedor_openclosed
+     - sensor.doors_bagdor_openclosed
+     
+  movement:
+    name: Bevægelse
+    entities:
+     - sensor.movement_livingroom
+
+  measurement:
+    name: Målinger
+    entities:
+     - sensor.aeotec_zw100_multisensor_6_luminance_2_3
+     - sensor.aeotec_zw100_multisensor_6_relative_humidity_2_5
+     - sensor.aeotec_zw100_multisensor_6_temperature_2_1
+     - sensor.aeotec_zw100_multisensor_6_ultraviolet_2_27
+     - sensor.fibaro_system_fgs223_double_relay_power_13_8
+
+  thermostats:
+    name: Thermostater
+    entities:
+     - climate.danfoss_z_thermostat_014g0013_heating_1_3_1
+     - climate.danfoss_z_thermostat_014g0013_heating_1_4_1
+     - climate.danfoss_z_thermostat_014g0013_heating_1_5_1
+     - climate.danfoss_z_thermostat_014g0013_heating_1_6_1
+     - climate.danfoss_z_thermostat_014g0013_heating_1_7_1
+     - climate.danfoss_z_thermostat_014g0013_heating_1_8_1
+     - climate.danfoss_z_thermostat_014g0013_heating_1_9_1
+     - climate.danfoss_z_thermostat_014g0013_heating_1_10_1
+  
+
+

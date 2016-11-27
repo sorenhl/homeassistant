@@ -1,0 +1,28 @@
+ - platform: template
+   sensors:
+     doors_havedor_openclosed:
+       friendly_name: 'Havedør'
+       value_template: >
+         {% if is_state('sensor.fibaro_system_fgk10x_door_opening_sensor_access_control_12_9', '22') %}
+           Åben
+         {% else %}
+           Lukket
+         {% endif %}
+
+     doors_bagdor_openclosed:
+       friendly_name: 'Bagdør'
+       value_template: >
+         {% if is_state('sensor.fibaro_system_fgk10x_door_opening_sensor_access_control_15_9', '22') %}
+           Åben
+         {% else %}
+           Lukket
+         {% endif %}
+
+     doors_hoveddor_openclosed:
+       friendly_name: 'Hoveddør'
+       value_template: >
+         {% if is_state('sensor.fibaro_system_fgk10x_door_opening_sensor_access_control_14_9', '22') %}
+           Åben
+         {% else %}
+           Lukket
+         {% endif %}

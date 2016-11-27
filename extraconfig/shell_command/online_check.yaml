@@ -1,0 +1,2 @@
+
+online_check_sonos:  '/usr/bin/nmap -p 5005 localhost | grep open &> /dev/null && echo success || echo fail'

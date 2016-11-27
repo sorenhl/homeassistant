@@ -1,0 +1,15 @@
+  climate_temperature_day:
+    name: Temperatur om dagen
+    initial: 22
+    min: 15
+    max: 25
+    step: 0.5
+    icon: mdi:temperature-celsius
+
+  climate_temperature_night:
+    name: Temperatur om natten
+    initial: 21
+    min: 15
+    max: 25
+    step: 0.5
+    icon: mdi:temperature-celsius

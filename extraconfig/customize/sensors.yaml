@@ -1,0 +1,37 @@
+  #########################
+  # Speed test            #
+  #########################
+  sensor.speedtest_download:
+    friendly_name: 'Download'
+    icon: mdi:speedometer
+  sensor.speedtest_upload:
+    friendly_name: 'Upload'
+    icon: mdi:speedometer
+
+  #########################
+  # Batteries             #
+  #########################
+  sensor.livingroom_movement_batt:
+    icon: mdi:battery
+  sensor.doors_havedor_batt:
+    icon: mdi:battery
+  sensor.doors_hoveddor_batt:
+    icon: mdi:battery
+  sensor.doors_bagdor_batt:
+    icon: mdi:battery
+  sensor.livingroom_thermostat1_batt:
+    icon: mdi:battery
+  sensor.livingroom_thermostat2_batt:
+    icon: mdi:battery
+  sensor.kitchen_thermostat_batt:
+    icon: mdi:battery
+  sensor.hallway_thermostat_batt:
+    icon: mdi:battery
+  sensor.bedroom_thermostat_batt:
+    icon: mdi:battery
+  sensor.oliver_thermostat_batt:
+    icon: mdi:battery
+  sensor.office_thermostat_batt:
+    icon: mdi:battery
+  sensor.bathroom_thermostat_batt:
+    icon: mdi:battery

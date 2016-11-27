@@ -1,0 +1,143 @@
+##########################
+# ENABLE / DISABLE       #
+##########################
+- alias: alarm_enabled_notification
+  trigger:
+  - platform: state
+    entity_id: input_boolean.alarm_enabled
+    from: 'off'
+    to: 'on'
+  action:
+    service: notify.pushover
+    data:
+      title: Home Alarm
+      message: Alarmen er nu slået til
+- alias: alarm_disabled_notification
+  trigger:
+  - platform: state
+    entity_id: input_boolean.alarm_enabled
+    from: 'on'
+    to: 'off'
+  action:
+    service: notify.pushover
+    data:
+      title: Home Alarm
+      message: Alarmen er nu slået fra
+
+##########################
+# ALARM TRIGGERED        #
+##########################
+- alias: alarm_tripped_on
+  trigger:
+  - platform: state
+    entity_id: input_boolean.alarm_tripped
+    from: 'off'
+    to: 'on'
+  action:
+   # Makes the lights blink
+   - service: script.turn_on
+     entity_id: script.alarm_lights_flashing
+   # Auto turn of after x seconds to avoid keep running
+   - service: script.turn_on
+     entity_id: script.alarm_auto_turn_off
+   # Sonos alarm, which will loop the alarm sound
+   - service: script.turn_on
+     entity_id: script.alarm_sonos
+   #- service: notify.pushover
+   #  data:
+   #    title: Home Alarm
+   #    message: ALARMEN ER GÅET!!!
+
+- alias: alarm_tripped_off
+  trigger:
+  - platform: state
+    entity_id: input_boolean.alarm_tripped
+    from: 'on'
+    to: 'off'
+  action:
+   # Turn off scripts
+   - service: script.turn_off
+     entity_id: script.alarm_lights_flashing
+   - service: script.turn_off
+     entity_id: script.alarm_sonos
+   # Stop lights etc.
+   - service: light.turn_off
+     data:
+       entity_id: group.hue_lights
+   - service: shell_command.alarm_sonos_stop
+ 
+##########################
+# Sensors                #
+##########################
+
+# Havedøren
+- alias: alarm_sensor_door_garden
+  trigger:
+  - platform: state
+    entity_id: sensor.fibaro_system_fgk10x_door_opening_sensor_access_control_12_9
+    state: '22'
+  condition:
+   - condition: state
+     entity_id: input_boolean.alarm_enabled
+     state: 'on'
+  action:
+   - service: homeassistant.turn_on
+     entity_id: input_boolean.alarm_tripped
+   - service: notify.pushover
+     data:
+       title: Home Alarm
+       message: 'Døren til haven er blevet åbnet!'
+
+# Fordøren
+- alias: alarm_sensor_door_front
+  trigger:
+  - platform: state
+    entity_id: sensor.fibaro_system_fgk10x_door_opening_sensor_access_control_15_9
+    state: '22'
+  condition:
+   - condition: state
+     entity_id: input_boolean.alarm_enabled
+     state: 'on'
+  action:
+   - service: homeassistant.turn_on
+     entity_id: input_boolean.alarm_tripped
+   - service: notify.pushover
+     data:
+       title: Home Alarm
+       message: 'Fordøren er blevet åbnet!'
+
+# Fordøren
+- alias: alarm_sensor_door_back
+  trigger:
+  - platform: state
+    entity_id: sensor.fibaro_system_fgk10x_door_opening_sensor_access_control_14_9
+    state: '22'
+  condition:
+   - condition: state
+     entity_id: input_boolean.alarm_enabled
+     state: 'on'
+  action:
+   - service: homeassistant.turn_on
+     entity_id: input_boolean.alarm_tripped
+   - service: notify.pushover
+     data:
+       title: Home Alarm
+       message: 'Døren i bryggerset er blevet åbnet!'
+
+# Bevægelsessensor i stuen
+- alias: alarm_sensor_movement_livingroom
+  trigger:
+  - platform: state
+    entity_id: sensor.aeotec_zw100_multisensor_6_burglar_2_10
+    state: '8'
+  condition:
+   - condition: state
+     entity_id: input_boolean.alarm_enabled
+     state: 'on'
+  action:
+   - service: homeassistant.turn_on
+     entity_id: input_boolean.alarm_tripped
+   - service: notify.pushover
+     data:
+       title: Home Alarm
+       message: 'Bevægelse i stuen!'

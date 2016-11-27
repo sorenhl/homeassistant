@@ -1,0 +1,19 @@
+
+= Solving issue with pip =
+Det ser ud til at fejlen skyldtes at jeg har kørt noget som sudo.
+Derfor kør hass uden sudo og sikre chmod 777 -R .
+
+#he issue is that it cannot install the dependencies
+#the trick is to add --ignore-installed and install it manually, e.g.
+#sudo pip install pushbullet.py==0.10.0 --upgrade --ignore-installed --target /home/pi/.homeassistant/deps
+#Solution: 
+
+= Open Z Wave =
+./ozwcp -p 8889
+/dev/ttyACM0
+
+
+= TODO =
+ * Få Climate med i homebridge
+ * Få batterimåler med i z-wave Climate
+ 

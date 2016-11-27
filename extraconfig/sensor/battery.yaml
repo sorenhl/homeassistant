@@ -1,0 +1,53 @@
+
+ - platform: template
+   sensors:
+     # ZWave 2
+     livingroom_movement_batt:
+       value_template: '{{ states.sensor.aeotec_zw100_multisensor_6_burglar_2_10.attributes.battery_level }}'
+       friendly_name: 'Føler i stuen'
+       unit_of_measurement: '%'
+     livingroom_thermostat1_batt:
+       value_template: '{{ states.climate.danfoss_z_thermostat_014g0013_heating_1_3_1.attributes.battery_level }}'
+       friendly_name: 'Thermostat i stuen mod haven'
+       unit_of_measurement: '%'
+     livingroom_thermostat2_batt:
+       value_template: '{{ states.climate.danfoss_z_thermostat_014g0013_heating_1_4_1.attributes.battery_level }}'
+       friendly_name: 'Thermostat i stuen mod vejen'
+       unit_of_measurement: '%'
+     kitchen_thermostat_batt:
+       value_template: '{{ states.climate.danfoss_z_thermostat_014g0013_heating_1_5_1.attributes.battery_level }}'
+       friendly_name: 'Thermostat i køkkenet'
+       unit_of_measurement: '%'
+     hallway_thermostat_batt:
+       value_template: '{{ states.climate.danfoss_z_thermostat_014g0013_heating_1_6_1.attributes.battery_level }}'
+       friendly_name: 'Thermostat i gangen'
+       unit_of_measurement: '%'
+     bedroom_thermostat_batt:
+       value_template: '{{ states.climate.danfoss_z_thermostat_014g0013_heating_1_7_1.attributes.battery_level }}'
+       friendly_name: 'Thermostat i soveværelset'
+       unit_of_measurement: '%'
+     oliver_thermostat_batt:
+       value_template: '{{ states.climate.danfoss_z_thermostat_014g0013_heating_1_8_1.attributes.battery_level }}'
+       friendly_name: 'Thermostat på Olivers værelse'
+       unit_of_measurement: '%'
+     office_thermostat_batt:
+       value_template: '{{ states.climate.danfoss_z_thermostat_014g0013_heating_1_9_1.attributes.battery_level }}'
+       friendly_name: 'Thermostat på Kontoret'
+       unit_of_measurement: '%'
+     bathroom_thermostat_batt:
+       value_template: '{{ states.climate.danfoss_z_thermostat_014g0013_heating_1_10_1.attributes.battery_level }}'
+       friendly_name: 'Thermostat på Badeværelset'
+       unit_of_measurement: '%'
+     doors_havedor_batt:
+       value_template: '{{ states.sensor.fibaro_system_fgk10x_door_opening_sensor_access_control_12_9.attributes.battery_level }}'
+       friendly_name: 'Havedør'
+       unit_of_measurement: '%'
+     doors_hoveddor_batt:
+       value_template: '{{ states.sensor.fibaro_system_fgk10x_door_opening_sensor_access_control_14_9.attributes.battery_level }}'
+       friendly_name: 'Hoveddør'
+       unit_of_measurement: '%'
+     doors_bagdor_batt:
+       value_template: '{{ states.sensor.fibaro_system_fgk10x_door_opening_sensor_access_control_15_9.attributes.battery_level }}'
+       friendly_name: 'Bagdør'
+       unit_of_measurement: '%'
+       

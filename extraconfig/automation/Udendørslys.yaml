@@ -1,0 +1,44 @@
+# Gør følgende: 1. Tænd lyset 15 min efter solen er gået ned 2. Sluk lyset 
+# kl. 11:00 3. Tænd lyset kl. 05:30 4. Sluk lyset
+- alias: exterior_lights_on_based_on_sun
+  trigger:
+    platform: sun
+    event: sunset
+    offset: '+00:15:00'
+  action:
+   - service: light.turn_on
+     entity_id: group.lights_exterior
+   - service: notify.pushover
+     data:
+       message: 'Lyset udenfor er nu tændt, da det er 15 min. siden solen gik ned'
+- alias: exterior_lights_off_based_on_time
+  trigger:
+    platform: time
+    after: '23:00:00'
+  action:
+   - service: light.turn_off
+     entity_id: group.lights_exterior
+   - service: notify.pushover
+     data:
+       message: 'Lyset udenfor er nu slukket, da kl. er efter 23:00'
+- alias: exterior_lights_on_based_on_time
+  trigger:
+    platform: time
+    after: '05:30:00'
+  action:
+   - service: light.turn_on
+     entity_id: group.lights_exterior
+   - service: notify.pushover
+     data:
+       message: 'Lyset udenfor er nu tændt da kl. er 5:30'
+- alias: exterior_lights_off_based_on_sun
+  trigger:
+    platform: sun
+    event: sunrise
+    #offset: '+00:15:00'
+  action:
+   - service: light.turn_off
+     entity_id: group.lights_exterior
+   - service: notify.pushover
+     data:
+       message: 'Lyset udenfor er nu slukket da solen er stået op'

@@ -1,0 +1,2 @@
+alarm_sonos_noice: '/usr/bin/curl -X GET http://127.0.0.1:5005/clipall/alarm.wav/5 --max-time 1'
+alarm_sonos_stop: '/usr/bin/curl -X GET http://127.0.0.1:5005/pauseall'

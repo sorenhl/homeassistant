@@ -1,0 +1,15 @@
+  automation_disable_exterior_lights:
+    name: Deaktiver udendørsbelysning
+    icon: mdi:weather-sunset-down
+    initial: off
+
+  automation_disable_climate_nightmode:
+    name: Deaktiver klima nattetilstand
+    icon: mdi:weather-night
+    initial: off
+
+
+  automation_climate_nightmode:
+    name: Nattetilstand
+    initial: off
+    icon: mdi:weather-night
