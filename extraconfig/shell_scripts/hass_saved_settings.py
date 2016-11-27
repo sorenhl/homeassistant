@@ -6,7 +6,8 @@ import os
 import argparse
 import urllib2
 import json
- 
+import ssl
+
 """
 BEGIN CUSTOMIZE
 """
@@ -85,27 +86,31 @@ def update_hass_post(section, setting, value):
     """
     Post to Hass
     """
+    #ctx = ssl.create_default_context()
+    #ctx.check_hostname = False
+    #ctx.verify_mode = ssl.CERT_NONE
+
     if section == "boolean":
-    
-        url = 'http://'+ host +'/api/services/input_boolean/turn_on'
+
+        url = 'https://'+ host +'/api/services/input_boolean/turn_on'
         data = json.dumps({"entity_id": ""+ setting +""})
         cont_len = len(data)
         
     elif section == "select":
     
-        url = 'http://'+ host +'/api/services/input_select/select_option'
+        url = 'https://'+ host +'/api/services/input_select/select_option'
         data = json.dumps({"entity_id": ""+ setting +"", "option": ""+ value +""})
         cont_len = len(data)
         
     elif section == "slider":
     
-        url = 'http://'+ host +'/api/services/input_slider/select_value'
+        url = 'https://'+ host +'/api/services/input_slider/select_value'
         data = json.dumps({"entity_id": ""+ setting +"", "value": value})
         cont_len = len(data)
         
     elif section == "tracker":
     
-        url = 'http://'+ host +'/api/services/device_tracker/see'
+        url = 'https://'+ host +'/api/services/device_tracker/see'
         data = json.dumps({"dev_id": ""+ setting.split(".")[1] +"", "location_name": value})
         cont_len = len(data)
 
