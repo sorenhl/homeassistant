@@ -11,3 +11,16 @@
       section: '{{ trigger.entity_id }}'
       settings: '{{ trigger.entity_id }}'
       value: "{{ trigger.to_state.state }}"
+
+##Load Input States from .ini - hass/saved_states
+
+- alias: "Load Input States from Settings.ini"
+  trigger:
+    platform: event
+    event_type: homeassistant_start
+  action:
+    - delay:
+      minutes: 1
+    - service: shell_command.load_input_settings
+      data_template:
+        key: !secret http_password

@@ -12,7 +12,7 @@ BEGIN CUSTOMIZE
 """
 path = "/home/pi/.homeassistant/saved_input_settings.ini" # Path to ini file. ex. "/home/mike/.homeassistant/saved_input_settings.ini"
 host = "localhost:8123"         # Host & Port of Home-Assistant. ex. "localhost:8123"
-
+api_key = ""
 """
 END CUSTOMIZE
 """
@@ -154,7 +154,7 @@ if args.act == 'update_settings':
     update_setting(args.sec.split(".")[0], args.set, args.val)
     
 elif args.act == 'update_hass':
-
+    api_key = args.key
     update_hass("boolean")
     update_hass("select")
     update_hass("slider")
