@@ -86,9 +86,6 @@ def update_hass_post(section, setting, value):
     """
     Post to Hass
     """
-    #ctx = ssl.create_default_context()
-    #ctx.check_hostname = False
-    #ctx.verify_mode = ssl.CERT_NONE
 
     if section == "boolean":
 
@@ -114,10 +111,13 @@ def update_hass_post(section, setting, value):
         data = json.dumps({"dev_id": ""+ setting.split(".")[1] +"", "location_name": value})
         cont_len = len(data)
 
+    ctx = ssl.create_default_context()
+    ctx.check_hostname = False
+    ctx.verify_mode = ssl.CERT_NONE
 
     req = urllib2.Request(url, data, {'Content-Type': 'application/json', 'Content-Length': cont_len})
     req.add_header('x-ha-access', api_key)
-    f = urllib2.urlopen(req)
+    f = urllib2.urlopen(req, context=ctx)
 
     response = f.read()
     f.close()
