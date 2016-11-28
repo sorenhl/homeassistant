@@ -1,0 +1,21 @@
+- alias: alarm_sensor_door_garden
+  trigger:
+  - platform: state
+    entity_id: sensor.fibaro_system_fgk10x_door_opening_sensor_access_control_12_9
+    state: '22'
+  - platform: state
+    entity_id: sensor.fibaro_system_fgk10x_door_opening_sensor_access_control_14_9
+    state: '22'
+  - platform: state
+    entity_id: sensor.fibaro_system_fgk10x_door_opening_sensor_access_control_15_9
+    state: '22'
+  condition:
+  - condition: state
+    entity_id: input_boolean.automation_disable_door_notifications
+    state: 'off'
+  action:
+  - platform: notify.livingroom_tv
+    message_template: "Obs. {{ trigger.from_state.name }} er lige blevet åbnet"
+       
+
+

@@ -8,6 +8,10 @@
     icon: mdi:weather-night
     initial: off
 
+  automation_disable_door_notifications:
+    name: Deaktiver Dørnotifikationer
+    icon: mdi:glasdoor
+    initial: off
 
   automation_climate_nightmode:
     name: Nattetilstand

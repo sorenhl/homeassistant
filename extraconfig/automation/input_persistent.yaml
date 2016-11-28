@@ -7,6 +7,8 @@
      entity_id: input_boolean.automation_disable_climate_nightmode
    - platform: state
      entity_id: input_boolean.automation_disable_exterior_lights
+   - platform: state
+     entity_id: input_boolean.automation_disable_door_notifications
 
   #Input sliders
    - platform: state
