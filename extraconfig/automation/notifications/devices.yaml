@@ -1,0 +1,11 @@
+- alias: notification_devices
+  trigger:
+  - platform: state
+    entity_id: device_tracker.soren
+  - platform: state
+    entity_id: device_tracker.louise
+  action:
+  - service: notify.pushover
+    data_template:
+      message: "{{ trigger.from_state.name }} er gået fra '{{ trigger.from_state.state }}' til  '{{ trigger.to_state.state }}'"
+  
