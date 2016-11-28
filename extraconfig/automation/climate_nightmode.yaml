@@ -1,11 +1,11 @@
-- alias: Nattetiltand
+- alias: Nightmode
   trigger:
   - platform: state
     entity_id: input_boolean.automation_climate_nightmode
   action:
    - service: climate.set_temperature
      data_template:
-       entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_3_1
+       #entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_3_1
        temperature: >
         {% if is_state('input_boolean.automation_climate_nightmode', 'on') %}
            {{ states('input_slider.climate_temperature_night') }}
@@ -16,8 +16,31 @@
      data_template:
        message: >
          {% if is_state('input_boolean.automation_climate_nightmode', 'on') %}
-           1Temperatur sat til {{ states('input_slider.climate_temperature_night') }}
+           Temperatur sat til {{ states('input_slider.climate_temperature_night') }}
          {% else %}
-           1Temperatur sat til {{ states('input_slider.climate_temperature_day') }}
+           Temperatur sat til {{ states('input_slider.climate_temperature_day') }}
          {% endif %}
 
+- alias: Activate nightmode
+  trigger: 
+  - platform: time
+    minutes: 1
+    seconds: 0
+  condition:
+  - condition: template
+    value_template: "{{ now().strftime('%H:%M') == states('input_select.clima_nightmode_from') }}"
+  action:
+  - service: homeassistant.turn_on
+    entity_id: input_boolean.automation_climate_nightmode
+
+- alias: Deactivate nightmode
+  trigger: 
+  - platform: time
+    minutes: 1
+    seconds: 0
+  condition:
+  - condition: template
+    value_template: "{{ now().strftime('%H:%M') == states('input_select.clima_nightmode_to') }}"
+  action:
+  - service: homeassistant.turn_off
+    entity_id: input_boolean.automation_climate_nightmode
