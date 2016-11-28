@@ -16,6 +16,7 @@
   action:
   - service: notify.livingroom_tv
     data_template:
-      message: "Obs. {{ trigger.from_state.name }} er lige blevet aabbnet"
+      message: "Obs. '{{ trigger.from_state.name }}'' er lige blevet åbnet"
+      
 
 
