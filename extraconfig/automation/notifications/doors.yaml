@@ -1,4 +1,4 @@
-- alias: alarm_sensor_door_garden
+- alias: notification_doors
   trigger:
   - platform: state
     entity_id: sensor.fibaro_system_fgk10x_door_opening_sensor_access_control_12_9
@@ -14,8 +14,8 @@
     entity_id: input_boolean.automation_disable_door_notifications
     state: 'off'
   action:
-  - platform: notify.livingroom_tv
-    message_template: "Obs. {{ trigger.from_state.name }} er lige blevet åbnet"
-       
+  - service: notify.livingroom_tv
+    data_template:
+      message: "Obs. {{ trigger.from_state.name }} er lige blevet aabbnet"
 
 
