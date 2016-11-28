@@ -5,6 +5,10 @@
     platform: sun
     event: sunset
     offset: '+00:15:00'
+  condition:
+   - condition: state
+     entity_id: input_boolean.automation_disable_exterior_lights
+     state: 'off'
   action:
    - service: light.turn_on
      entity_id: group.lights_exterior
@@ -15,6 +19,10 @@
   trigger:
     platform: time
     after: '23:00:00'
+  condition:
+   - condition: state
+     entity_id: input_boolean.automation_disable_exterior_lights
+     state: 'off'
   action:
    - service: light.turn_off
      entity_id: group.lights_exterior
@@ -25,6 +33,10 @@
   trigger:
     platform: time
     after: '05:30:00'
+  condition:
+   - condition: state
+     entity_id: input_boolean.automation_disable_exterior_lights
+     state: 'off'
   action:
    - service: light.turn_on
      entity_id: group.lights_exterior
@@ -36,6 +48,10 @@
     platform: sun
     event: sunrise
     #offset: '+00:15:00'
+  condition:
+   - condition: state
+     entity_id: input_boolean.automation_disable_exterior_lights
+     state: 'off'
   action:
    - service: light.turn_off
      entity_id: group.lights_exterior

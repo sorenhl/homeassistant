@@ -1,6 +1,13 @@
  ## Save Input States to .ini - hass/saved_states
 - alias: "Save Input States to Settings.ini"
   trigger:
+
+  # Input booleans
+   - platform: state
+     entity_id: input_boolean.automation_disable_climate_nightmode
+   - platform: state
+     entity_id: input_boolean.automation_disable_exterior_lights
+
   #Input sliders
    - platform: state
      entity_id: input_slider.climate_temperature_day

@@ -29,6 +29,9 @@
   condition:
   - condition: template
     value_template: "{{ now().strftime('%H:%M') == states('input_select.clima_nightmode_from') }}"
+  - condition: state
+    entity_id: input_boolean.automation_disable_climate_nightmode
+    state: 'off'
   action:
   - service: homeassistant.turn_on
     entity_id: input_boolean.automation_climate_nightmode
@@ -41,6 +44,9 @@
   condition:
   - condition: template
     value_template: "{{ now().strftime('%H:%M') == states('input_select.clima_nightmode_to') }}"
+  - condition: state
+    entity_id: input_boolean.automation_disable_climate_nightmode
+    state: 'off'
   action:
   - service: homeassistant.turn_off
     entity_id: input_boolean.automation_climate_nightmode
