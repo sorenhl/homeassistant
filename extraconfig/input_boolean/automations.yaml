@@ -10,7 +10,7 @@
 
   automation_disable_door_notifications:
     name: Deaktiver Dørnotifikationer
-    icon: mdi:glasdoor
+    icon: mdi:glassdoor
     initial: off
 
   automation_climate_nightmode:
