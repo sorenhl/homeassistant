@@ -27,8 +27,3 @@
     entities:
      - group.lights_office
      - climate.danfoss_z_thermostat_014g0013_heating_1_9_1
-
-  automation_override:
-    name: Automation override
-    entities:
-     - input_boolean.automation_disable_exterior_lights
