@@ -24,7 +24,7 @@
 - alias: Activate nightmode
   trigger: 
   - platform: time
-    minutes: 1
+    minutes: /1
     seconds: 0
   condition:
   - condition: template
@@ -39,8 +39,7 @@
 - alias: Deactivate nightmode
   trigger: 
   - platform: time
-    minutes: 1
-    seconds: 0
+    minute: /1
   condition:
   - condition: template
     value_template: "{{ now().strftime('%H:%M') == states('input_select.clima_nightmode_to') }}"
