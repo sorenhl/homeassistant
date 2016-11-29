@@ -1,8 +1,9 @@
 - alias: notification_doors
   trigger:
-  - platform: state
-    entity_id: sensor.fibaro_system_fgk10x_door_opening_sensor_access_control_12_9
-    state: '22'
+#  We do not want to see notifications for this door
+#  - platform: state
+#    entity_id: sensor.fibaro_system_fgk10x_door_opening_sensor_access_control_12_9
+#    state: '22'
   - platform: state
     entity_id: sensor.fibaro_system_fgk10x_door_opening_sensor_access_control_14_9
     state: '22'
@@ -16,7 +17,7 @@
   action:
   - service: notify.livingroom_tv
     data_template:
-      message: "Obs. '{{ trigger.from_state.name }}'' er lige blevet åbnet"
+      message: "Obs. '{{ trigger.from_state.name }} er lige blevet åbnet"
       
 
 

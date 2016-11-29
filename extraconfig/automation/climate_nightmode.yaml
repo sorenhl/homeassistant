@@ -50,3 +50,13 @@
   action:
   - service: homeassistant.turn_off
     entity_id: input_boolean.automation_climate_nightmode
+
+- alias: climate_test
+  trigger: 
+  - platform: time
+    minutes: 1
+    seconds: 0
+  action:
+  - service: logbook.log
+    data_template:
+      message: 'Hej' 
