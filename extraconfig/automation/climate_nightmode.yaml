@@ -24,7 +24,7 @@
 - alias: Activate nightmode
   trigger: 
   - platform: time
-    minutes: /1
+    minutes: '/1'
     seconds: 0
   condition:
   - condition: template
@@ -39,7 +39,8 @@
 - alias: Deactivate nightmode
   trigger: 
   - platform: time
-    minute: /1
+    minutes: '/1'
+    seconds: 0
   condition:
   - condition: template
     value_template: "{{ now().strftime('%H:%M') == states('input_select.clima_nightmode_to') }}"
@@ -50,12 +51,12 @@
   - service: homeassistant.turn_off
     entity_id: input_boolean.automation_climate_nightmode
 
-- alias: climate_test
-  trigger: 
-  - platform: time
-    minutes: 1
-    seconds: 0
-  action:
-  - service: logbook.log
-    data_template:
-      message: 'Hej' 
+#- alias: climate_test
+#  trigger: 
+#  - platform: time
+#    minutes: '/1'
+#    seconds: 0
+#  action:
+#  - service: notify.livingroom_tv
+#    data_template:
+#      message: "{{ now().strftime('%H:%M') }}"
