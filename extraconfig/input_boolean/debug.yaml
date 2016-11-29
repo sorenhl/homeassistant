@@ -1,0 +1,4 @@
+# automation_disable_climate_nightmode:
+#   name: Deaktiver klima nattetilstand
+#   icon: mdi:weather-night
+#     initial: off

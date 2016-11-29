@@ -5,6 +5,16 @@
     from: 'off'
     to: 'on'
   action:
-    service: notify.pushover
+  - service: shell_command.sonos_play_coffeehouse
+  - service: shell_command.sonos_volume
     data:
-      message: Besked fra stikkontakten
+      volume: 10
+
+- alias: livingroom_fuga1_knap4_off
+  trigger:
+  - platform: state
+    entity_id: switch.logic_soft_zhc5010_wall_switch_switch_11_0_5
+    from: 'on'
+    to: 'off'
+  action:
+  - service: shell_command.sonos_pause
