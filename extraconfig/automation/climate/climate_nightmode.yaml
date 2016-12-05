@@ -70,12 +70,30 @@
     entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_9_1
   - platform: state
     entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_10_1
+  condition:
+  - condition: state
+    entity_id: input_boolean.automation_climate_nightmode
+    state: 'off' # ONLY change values when it is day, otherwise we will override day temperatures with night
   action:
   - service: input_slider.select_value
     data_template:
       entity_id: >
         {%- if trigger.to_state.attributes.node_id == 3 -%}
           input_slider.climate_temperature_livingroom_day
+        {%- elif trigger.to_state.attributes.node_id == 4 -%}
+          input_slider.climate_temperature_livingroom_day
+        {%- elif trigger.to_state.attributes.node_id == 5 -%}
+          input_slider.climate_temperature_kitchen_day
+        {%- elif trigger.to_state.attributes.node_id == 6 -%}
+          input_slider.climate_temperature_hallway_day
+        {%- elif trigger.to_state.attributes.node_id == 7 -%}
+          input_slider.climate_temperature_bedroom_day
+        {%- elif trigger.to_state.attributes.node_id == 8 -%}
+          input_slider.climate_temperature_oliver_day
+        {%- elif trigger.to_state.attributes.node_id == 9 -%}
+          input_slider.climate_temperature_office_day
+        {%- elif trigger.to_state.attributes.node_id == 10 -%}
+          input_slider.climate_temperature_bathroom_day
         {% endif -%}
       value: "{{ trigger.to_state.attributes.temperature }}"
   - service: notify.livingroom_tv
