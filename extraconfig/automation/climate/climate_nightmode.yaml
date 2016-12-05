@@ -57,15 +57,15 @@
   - platform: state
   condition:
   - platform: template
-    value_template: "{{trigger.to_state.domain == 'climate' and 'temperature' in trigger.to_state.attributes }}"
+    value_template: "{{ trigger.to_state.domain == 'climate' and 'temperature' in trigger.to_state.attributes }}"
   action:
   - service: input_slider.select_value
     data_template:
       entity_id: > 
-        {{- if trigger.to_state.attributes.node_id == 3}}
+        "{{- if trigger.to_state.attributes.node_id == 3 }}
           input_slider.climate_temperature_livingroom_day
-        {{ endif- }}
-      value: '{{ trigger.to_state.attributes.temperature }}'
+        {{ endif- }}"
+      value: "{{ trigger.to_state.attributes.temperature }}"
 
 # Nightmode = on
 # Nightmode = off
