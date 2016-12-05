@@ -5,6 +5,7 @@
      - input_boolean.automation_disable_exterior_lights
      - input_boolean.automation_disable_climate_nightmode
      - input_boolean.automation_disable_door_notifications
+     - input_boolean.automation_disable_linked_thermostats
 
   alarm:
     name: Alarm

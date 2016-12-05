@@ -52,6 +52,10 @@
     entity_id: input_boolean.automation_climate_nightmode
 
 
+
+##################################################
+# Allows temperatures to be adjusted by radiator #
+##################################################
 - alias: climate_change_value_by_thermostat
   trigger:
   - platform: state
@@ -100,6 +104,40 @@
     data_template:
       message: "Node id: {{ trigger.to_state.attributes.node_id }} = {{ trigger.to_state.attributes.temperature }}"
 
+
+##################################################
+# Links ALL radiators together                   #
+##################################################
+- alias: climate_change_value_by_thermostat
+  trigger:
+  - platform: state
+    entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_3_1
+  - platform: state
+    entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_4_1
+  - platform: state
+    entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_5_1
+  - platform: state
+    entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_6_1
+  - platform: state
+    entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_7_1
+  - platform: state
+    entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_8_1
+  - platform: state
+    entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_9_1
+  - platform: state
+    entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_10_1
+  condition:
+  - condition: state
+    entity_id: input_boolean.automation_climate_nightmode
+    state: 'off' # ONLY change values when it is day, otherwise we will override day temperatures with night
+  - condition: state
+    entity_id: input_boolean.automation_disable_linked_thermostats
+    state: 'off'
+  action:
+  - service: climate.set_temperature
+   data_template:
+   temperature: '{{ trigger.to_state.attributes.temperature }}'
+      
 # Nightmode = on
 # Nightmode = off
 # Change temperature in present

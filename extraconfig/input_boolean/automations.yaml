@@ -13,6 +13,11 @@
     icon: mdi:glassdoor
     initial: off
 
+  automation_disable_linked_thermostats:
+    name: Deaktiver fælles temperatur
+    icon: mdi:thermometer-lines
+    initial: off
+
   automation_climate_nightmode:
     name: Nattetilstand
     initial: off
