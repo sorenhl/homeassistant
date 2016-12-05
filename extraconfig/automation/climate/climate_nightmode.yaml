@@ -54,8 +54,22 @@
 
 - alias: climate_change_value_by_thermostat
   trigger:
-  - platform: template
-    value_template: "{{ trigger.to_state.domain == 'climate' and 'temperature' in trigger.to_state.attributes }}"
+  - platform: state
+    entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_3_1
+  - platform: state
+    entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_4_1
+  - platform: state
+    entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_5_1
+  - platform: state
+    entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_6_1
+  - platform: state
+    entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_7_1
+  - platform: state
+    entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_8_1
+  - platform: state
+    entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_9_1
+  - platform: state
+    entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_10_1
   action:
   - service: input_slider.select_value
     data_template:
