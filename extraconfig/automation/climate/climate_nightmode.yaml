@@ -135,8 +135,8 @@
     state: 'off'
   action:
   - service: climate.set_temperature
-   data_template:
-   temperature: '{{ trigger.to_state.attributes.temperature }}'
+    data_template:
+      temperature: '{{ trigger.to_state.attributes.temperature }}'
       
 # Nightmode = on
 # Nightmode = off
