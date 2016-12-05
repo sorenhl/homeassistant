@@ -108,7 +108,7 @@
 ##################################################
 # Links ALL radiators together                   #
 ##################################################
-- alias: climate_change_value_by_thermostat
+- alias: climate_link_all_thermostats_together
   trigger:
   - platform: state
     entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_3_1
