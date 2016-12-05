@@ -100,9 +100,9 @@
           input_slider.climate_temperature_bathroom_day
         {% endif -%}
       value: "{{ trigger.to_state.attributes.temperature }}"
-  - service: notify.livingroom_tv
-    data_template:
-      message: "Node id: {{ trigger.to_state.attributes.node_id }} = {{ trigger.to_state.attributes.temperature }}"
+#  - service: notify.livingroom_tv
+#    data_template:
+#      message: "Node id: {{ trigger.to_state.attributes.node_id }} = {{ trigger.to_state.attributes.temperature }}"
 
 
 ##################################################
@@ -137,6 +137,9 @@
   - service: climate.set_temperature
     data_template:
       temperature: '{{ trigger.to_state.attributes.temperature }}'
+  - service: notify.livingroom_tv
+    data_template:
+      message: "Setting all radiators to temperature: {{ trigger.to_state.attributes.temperature }}"
       
 # Nightmode = on
 # Nightmode = off
