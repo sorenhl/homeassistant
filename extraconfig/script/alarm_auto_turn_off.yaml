@@ -1,6 +1,6 @@
   alarm_auto_turn_off:
-    alias: Turn alarm off after 30 sec
+    alias: Turn alarm off after 5 minutes
     sequence:
-     - delay: 00:00:30
+     - delay: 00:05:00
      - service: homeassistant.turn_off
        entity_id: input_boolean.alarm_tripped  

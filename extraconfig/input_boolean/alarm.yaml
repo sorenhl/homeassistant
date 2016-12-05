@@ -18,6 +18,10 @@
     initial: off
     icon: mdi:lightbulb
 
+  alarm_config_action_auto_turnoff:
+    name: Slå alarm fra efter 5 min.
+    initial: on
+    
   alarm_config_location_on:
     name: Auto-aktiver alarm når vi er ude
     initial: off
@@ -33,6 +37,8 @@
   alarm_config_trigger_movement:
     name: Udløs alarm ved bevægelse
     initial: off
+
+
   
 
 

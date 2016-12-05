@@ -13,6 +13,7 @@
      - input_boolean.alarm_tripped
      - input_boolean.alarm_config_action_noice
      - input_boolean.alarm_config_action_lights
+     - input_boolean.alarm_config_action_auto_turnoff
      - input_boolean.alarm_config_location_on
      - input_boolean.alarm_config_location_off
      - input_boolean.alarm_config_trigger_movement
