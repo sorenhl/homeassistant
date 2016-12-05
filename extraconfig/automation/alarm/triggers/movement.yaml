@@ -1,0 +1,23 @@
+- alias: alarm_trigger_movement
+  trigger:
+#  We do not want to see notifications for this door
+  - platform: state
+    entity_id: sensor.aeotec_zw100_multisensor_6_burglar_2_10
+    state: '8'
+  condition:
+  - condition: state
+    entity_id: input_boolean.alarm_enabled
+    state: 'on'
+  - condition: state
+    entity_id: input_boolean.alarm_config_trigger_movement
+    state: 'on'
+  action:
+  - service: homeassistant.turn_on
+    entity_id: input_boolean.alarm_tripped
+  - service: notify.pushover
+    data_template:
+      title: 'Alarmen er gået'
+      message: "Der er bevægelse i '{{ trigger.from_state.name }}'!"
+
+
+

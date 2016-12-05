@@ -1,0 +1,30 @@
+- alias: alarm_trigger_doors
+  trigger:
+#  We do not want to see notifications for this door
+  - platform: state
+    entity_id: sensor.fibaro_system_fgk10x_door_opening_sensor_access_control_12_9
+    state: '22'
+  - platform: state
+    entity_id: sensor.fibaro_system_fgk10x_door_opening_sensor_access_control_14_9
+    state: '22'
+# Back-door must be delayed to give time to detect phones
+#  - platform: state
+#    entity_id: sensor.fibaro_system_fgk10x_door_opening_sensor_access_control_15_9
+#    state: '22'
+  condition:
+  - condition: state
+    entity_id: input_boolean.alarm_enabled
+    state: 'on'
+  - condition: state
+    entity_id: input_boolean.alarm_config_trigger_doors
+    state: 'on'
+  action:
+  - service: homeassistant.turn_on
+    entity_id: input_boolean.alarm_tripped
+  - service: notify.pushover
+    data_template:
+      title: 'Alarmen er gået'
+      message: "Årsag: '{{ trigger.from_state.name }}' er lige blevet åbnet!"
+
+
+

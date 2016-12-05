@@ -1,19 +1,38 @@
   alarm_enabled:
-    name: Alarm Enabled
+    name: Alarm aktiveret
     initial: off
     icon: mdi:shield-outline
 
-  alarm_enable_noice:
-    name: Make noise
+  alarm_tripped:
+    name: Alarm uløst
+    initial: off
+    icon: mdi:shield-outline
+
+  alarm_config_action_noice:
+    name: Giv lyd ved alarm (Sonos/røgalarmer)
     initial: off
     icon: mdi:bullhorn
 
-  alarm_enable_lights:
-    name: Blink with lights
+  alarm_config_action_lights:
+    name: Blink med lys ved alarm
     initial: off
     icon: mdi:lightbulb
 
-  alarm_tripped:
-    name: Alarm Tripped
+  alarm_config_location_on:
+    name: Auto-aktiver alarm når vi er ude
     initial: off
-    icon: mdi:shield-outline
+
+  alarm_config_location_off:
+    name: Auto-deaktiver alarm når vi er hjemme
+    initial: on
+
+  alarm_config_trigger_doors:
+    name: Udløs alarm ved åbning af døre
+    initial: on
+
+  alarm_config_trigger_movement:
+    name: Udløs alarm ved bevægelse
+    initial: off
+  
+
+

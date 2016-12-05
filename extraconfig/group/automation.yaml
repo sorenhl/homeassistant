@@ -10,9 +10,13 @@
     name: Alarm
     entities:
      - input_boolean.alarm_enabled
-     - input_boolean.alarm_enable_noice
-     - input_boolean.alarm_enable_lights
      - input_boolean.alarm_tripped
+     - input_boolean.alarm_config_action_noice
+     - input_boolean.alarm_config_action_lights
+     - input_boolean.alarm_config_location_on
+     - input_boolean.alarm_config_location_off
+     - input_boolean.alarm_config_trigger_movement
+     - input_boolean.alarm_config_trigger_doors
 
   climate_nightmode:
     name: Nattetilstand for thermostater
