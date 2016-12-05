@@ -22,9 +22,9 @@ alarm_sonos_loop:
     entity_id: script.alarm_sonos_loop1
  
 alarm_sonos_loop1:
-  alias: Sonos alarm
+  alias: Sonos Alarm loop 1
   sequence:
   - service: shell_command.alarm_sonos_noice
-  - delay: 00:01:00
+  - delay: 00:00:30
   - service: script.turn_on
     entity_id: script.alarm_sonos_loop
