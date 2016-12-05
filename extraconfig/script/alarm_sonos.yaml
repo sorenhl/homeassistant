@@ -1,15 +1,30 @@
-  alarm_sonos_loop:
-    alias: Sonos Alarm loop
-    sequence:
-      - service: script.turn_on
-        data:
-          entity_id: script.alarm_sonos
+alarm_sound_sonos_start:
+  alias: Start sonos alarm
+  sequence:
+  - service: script.turn_on
+    entity_id: script.alarm_sonos_loop
 
-  alarm_sonos:
-    alias: Sonos alarm
-    sequence:
-     - service: shell_command.alarm_sonos_noice
-     - delay: 00:01:00
-     - service: script.turn_on
-       data:
-        entity_id: script.alarm_sonos_loop
+alarm_sound_sonos_stop:  
+  alias: Stop sonos alarm
+  sequence:
+  - service: script.turn_off
+    entity_id: script.alarm_sonos_loop1
+  - service: script.turn_off
+    entity_id: script.alarm_sonos_loop
+  - service: shell_command.alarm_sonos_stop
+
+
+# Double loop to trick home assistant
+alarm_sonos_loop:
+  alias: Sonos Alarm loop 
+  sequence:
+  - service: script.turn_on
+    entity_id: script.alarm_sonos_loop1
+ 
+alarm_sonos_loop1:
+  alias: Sonos alarm
+  sequence:
+  - service: shell_command.alarm_sonos_noice
+  - delay: 00:01:00
+  - service: script.turn_on
+    entity_id: script.alarm_sonos_loop

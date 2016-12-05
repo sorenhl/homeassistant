@@ -60,8 +60,8 @@
 #    # Turn off scripts
 #    - service: script.turn_off
 #      entity_id: script.alarm_lights_flashing
-#    - service: script.turn_off
-#      entity_id: script.alarm_sonos
+  #    - service: script.turn_off
+  #      entity_id: script.alarm_sonos
 #    # Stop lights etc.
 #    - service: light.turn_off
 #      data:
