@@ -64,6 +64,9 @@
           input_slider.climate_temperature_livingroom_day
         {% endif -%}
       value: "{{ trigger.to_state.attributes.temperature }}"
+  - service: notify.livingroom_tv
+    data_template:
+      message: "Node id: {{ trigger.to_state.attributes.node_id }} = {{ trigger.to_state.attributes.temperature }}"
 
 # Nightmode = on
 # Nightmode = off
