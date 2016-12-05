@@ -1,25 +1,25 @@
-- alias: Nightmode
-  trigger:
-  - platform: state
-    entity_id: input_boolean.automation_climate_nightmode
-  action:
-   - service: climate.set_temperature
-     data_template:
-       #entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_3_1
-       temperature: >
-        {% if is_state('input_boolean.automation_climate_nightmode', 'on') %}
-           {{ states('input_slider.climate_temperature_night') }}
-         {% else %}
-           {{ states('input_slider.climate_temperature_day') }}
-         {% endif %}
-   - service: notify.pushover
-     data_template:
-       message: >
-         {% if is_state('input_boolean.automation_climate_nightmode', 'on') %}
-           Temperatur sat til {{ states('input_slider.climate_temperature_night') }}
-         {% else %}
-           Temperatur sat til {{ states('input_slider.climate_temperature_day') }}
-         {% endif %}
+# - alias: Nightmode
+#   trigger:
+#   - platform: state
+#     entity_id: input_boolean.automation_climate_nightmode
+#   action:
+#    - service: climate.set_temperature
+#      data_template:
+#        #entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_3_1
+#        temperature: >
+#         {% if is_state('input_boolean.automation_climate_nightmode', 'on') %}
+#            {{ states('input_slider.climate_temperature_night') }}
+#          {% else %}
+#            {{ states('input_slider.climate_temperature_day') }}
+#          {% endif %}
+#    - service: notify.pushover
+#      data_template:
+#        message: >
+#          {% if is_state('input_boolean.automation_climate_nightmode', 'on') %}
+#            Temperatur sat til {{ states('input_slider.climate_temperature_night') }}
+#          {% else %}
+#            Temperatur sat til {{ states('input_slider.climate_temperature_day') }}
+#          {% endif %}
 
 - alias: Activate nightmode
   trigger: 
@@ -50,6 +50,16 @@
   action:
   - service: homeassistant.turn_off
     entity_id: input_boolean.automation_climate_nightmode
+
+
+# Nightmode = on
+# Nightmode = off
+# Change temperature in present
+# CHange temperature from radiator
+
+
+
+
 
 #- alias: climate_test
 #  trigger: 

@@ -26,15 +26,39 @@
 
   #Input sliders
    - platform: state
-     entity_id: input_slider.climate_temperature_day
+     entity_id: input_slider.climate_temperature_livingroom_day
    - platform: state
-     entity_id: input_slider.climate_temperature_night
-
+     entity_id: input_slider.climate_temperature_livingroom_night
+   - platform: state
+     entity_id: input_slider.climate_temperature_kitchen_day
+   - platform: state
+     entity_id: input_slider.climate_temperature_kitchen_night
+   - platform: state
+     entity_id: input_slider.climate_temperature_oliver_day
+   - platform: state
+     entity_id: input_slider.climate_temperature_oliver_night
+   - platform: state
+     entity_id: input_slider.climate_temperature_hallway_day
+   - platform: state
+     entity_id: input_slider.climate_temperature_hallway_night
+   - platform: state
+     entity_id: input_slider.climate_temperature_bathroom_day
+   - platform: state
+     entity_id: input_slider.climate_temperature_bathroom_night
+   - platform: state
+     entity_id: input_slider.climate_temperature_bedroom_day
+   - platform: state
+     entity_id: input_slider.climate_temperature_bedroom_night
+   - platform: state
+     entity_id: input_slider.climate_temperature_office_day  
+   - platform: state
+     entity_id: input_slider.climate_temperature_office_night
   #Input selects
    - platform: state
      entity_id: input_select.clima_nightmode_from
    - platform: state
      entity_id: input_select.clima_nightmode_to
+   
   action:
     service: shell_command.save_input_settings
     data_template:
