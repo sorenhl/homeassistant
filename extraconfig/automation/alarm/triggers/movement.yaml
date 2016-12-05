@@ -1,6 +1,5 @@
 - alias: alarm_trigger_movement
   trigger:
-#  We do not want to see notifications for this door
   - platform: state
     entity_id: sensor.aeotec_zw100_multisensor_6_burglar_2_10
     state: '8'
@@ -17,7 +16,7 @@
   - service: notify.pushover
     data_template:
       title: 'Alarmen er gået'
-      message: "Der er bevægelse i '{{ trigger.from_state.name }}'!"
+      message: "Der er bevægelse i 'Stuen'"
 
 
 

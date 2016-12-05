@@ -9,6 +9,20 @@
      entity_id: input_boolean.automation_disable_exterior_lights
    - platform: state
      entity_id: input_boolean.automation_disable_door_notifications
+   - platform: state
+     entity_id: input_boolean.alarm_config_action_noice
+   - platform: state
+     entity_id: input_boolean.alarm_config_action_lights
+   - platform: state
+     entity_id: input_boolean.alarm_config_action_auto_turnoff
+   - platform: state
+     entity_id: input_boolean.alarm_config_location_on
+   - platform: state
+     entity_id: input_boolean.alarm_config_location_off
+   - platform: state
+     entity_id: input_boolean.alarm_config_trigger_movement
+   - platform: state
+     entity_id: input_boolean.alarm_config_trigger_doors
 
   #Input sliders
    - platform: state

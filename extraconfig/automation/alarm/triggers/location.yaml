@@ -1,0 +1,27 @@
+- alias: alarm_trigger_location_on
+  trigger:
+  - platform: state
+    entity_id: group.household
+    state: 'not_home'
+  condition:
+  - condition: state
+    entity_id: input_boolean.alarm_config_location_on
+    state: 'on'
+  action:
+  - service: homeassistant.turn_on
+    entity_id: input_boolean.alarm_enabled
+
+- alias: alarm_trigger_location_off
+  trigger:
+  - platform: state
+    entity_id: group.household
+    state: 'home'
+  condition:
+  - condition: state
+    entity_id: input_boolean.alarm_config_location_off
+    state: 'on'
+  action:
+  - service: homeassistant.turn_off
+    entity_id: input_boolean.alarm_enabled
+
+
