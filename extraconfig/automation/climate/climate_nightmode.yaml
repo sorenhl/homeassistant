@@ -142,17 +142,3 @@
 # Nightmode = off
 # Change temperature in present
 # CHange temperature from radiator
-
-
-
-
-
-#- alias: climate_test
-#  trigger: 
-#  - platform: time
-#    minutes: '/1'
-#    seconds: 0
-#  action:
-#  - service: notify.livingroom_tv
-#    data_template:
-#      message: "{{ now().strftime('%H:%M') }}"
