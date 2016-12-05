@@ -1,0 +1,28 @@
+- alias: alarm_action_lights_hue_on
+  trigger:
+  - platform: state
+    entity_id: input_boolean.alarm_tripped
+    state: 'on'
+  condition:
+  - condition: state
+    entity_id: input_boolean.alarm_enabled
+    state: 'on'
+  - condition: state
+    entity_id: input_boolean.alarm_config_action_lights
+    state: 'on'
+  action:
+  - service: script.turn_on
+    entity_id: script.alarm_lights_hue_start
+
+- alias: alarm_action_lights_hue_off
+  trigger:
+  - platform: state
+    entity_id: input_boolean.alarm_tripped
+    state: 'off'
+  condition:
+  - condition: state
+    entity_id: input_boolean.alarm_config_action_lights
+    state: 'on'
+  action:
+  - service: script.turn_on
+    entity_id: script.alarm_lights_hue_stop
