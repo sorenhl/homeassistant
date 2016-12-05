@@ -1,21 +1,22 @@
- alarm_lights_hue_start:
-   alias: Start Hue lights flashing
-   sequence:
-   - service: light.turn_on
-     data:
-       entity_id: group.hue_lights
-       rgb_color: [255,0,0]
-       brightness: 1
-   - service: script.turn_on
-     entity_id: script.alarm_lights_hue_loop
+alarm_lights_hue_start:
+  alias: Start Hue lights flashing
+  sequence:
+  - service: light.turn_on
+    data:
+      entity_id: group.hue_lights
+      rgb_color: [255,0,0]
+      brightness: 1
+  - service: script.turn_on
+    entity_id: script.alarm_lights_hue_loop
 
- alarm_lights_hue_stop:
-   alias: Hue lights flashing
-   - service: light.turn_off
-     data:
-       entity_id: group.hue_lights
-   - service: script.turn_off
-     entity_id: script.alarm_lights_hue_loop
+alarm_lights_hue_stop:
+  alias: Hue lights flashing
+  sequence:
+  - service: light.turn_off
+    data:
+      entity_id: group.hue_lights
+  - service: script.turn_off
+    entity_id: script.alarm_lights_hue_loop
 
 # 15 min. Too bad I can't get loop to work :/
 alarm_lights_hue_loop:
