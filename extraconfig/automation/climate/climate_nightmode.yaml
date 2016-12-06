@@ -119,7 +119,7 @@
       temperature: '{{ trigger.to_state.attributes.temperature }}'
   - service: notify.livingroom_tv
     data_template:
-      message: "Setting all radiators to temperature: {{ trigger.to_state.attributes.temperature }}"
+      message: "Temperaturen er nu ændre fra {{ trigger.from_state.attributes.temperature }} til {{ trigger.to_state.attributes.temperature }}"
 
 ##################################################
 # Aktivering / Deaktivering af nattetilstand     #
