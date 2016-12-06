@@ -118,6 +118,18 @@
         and trigger.to_state.attributes.temperature != states('input_slider.climate_temperature_livingroom_day')
         or trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_4_1'
         and trigger.to_state.attributes.temperature != states('input_slider.climate_temperature_livingroom_day')
+        or trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_5_1'
+        and trigger.to_state.attributes.temperature != states('input_slider.climate_temperature_kitchen_day')
+        or trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_6_1'
+        and trigger.to_state.attributes.temperature != states('input_slider.climate_temperature_hallway_day')
+        or trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_7_1'
+        and trigger.to_state.attributes.temperature != states('input_slider.climate_temperature_bedroom_day')
+        or trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_8_1'
+        and trigger.to_state.attributes.temperature != states('input_slider.climate_temperature_oliver_day')
+        or trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_9_1'
+        and trigger.to_state.attributes.temperature != states('input_slider.climate_temperature_office_day')
+        or trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_10_1'
+        and trigger.to_state.attributes.temperature != states('input_slider.climate_temperature_bathroom_day')
       }}
   action:
   - service: climate.set_temperature
@@ -210,18 +222,3 @@
 
 
 
-#    - service: notify.pushover
-#      data_template:
-#        message: >
-#          {% if is_state('input_boolean.automation_climate_nightmode', 'on') %}
-#            Temperatur sat til {{ states('input_slider.climate_temperature_night') }}
-#          {% else %}
-#            Temperatur sat til {{ states('input_slider.climate_temperature_day') }}
-#          {% endif %}
-      
-
-
-# Nightmode = on
-# Nightmode = off
-# Change temperature in present
-# CHange temperature from radiator
