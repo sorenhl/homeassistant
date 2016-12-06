@@ -1,3 +1,4 @@
-sonos_play_coffeehouse: 'http://127.0.0.1:5005/favorite/Your%20Favorite%20Coffeehouse'
+sonos_play_coffeehouse: '/usr/bin/curl -X GET http://127.0.0.1:5005/favorite/Your%20Favorite%20Coffeehouse'
+sonos_play_julesange: '/usr/bin/curl -X GET http://127.0.0.1:5005/favorite/Julesange%20du%20kender'
 sonos_pause: '/usr/bin/curl -X GET http://127.0.0.1:5005/pauseall'
 sonos_volume: '/usr/bin/curl -X GET http://127.0.0.1:5005/volume/{{ volume }}'

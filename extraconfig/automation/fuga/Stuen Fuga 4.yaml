@@ -5,10 +5,12 @@
     from: 'off'
     to: 'on'
   action:
-  - service: shell_command.sonos_play_coffeehouse
+  - service: media_player.turn_off
+    entity_id: media_player.lg_webos_smart_tv
+  - service: shell_command.sonos_play_julesange
   - service: shell_command.sonos_volume
     data:
-      volume: 10
+      volume: 12
 
 - alias: livingroom_fuga1_knap4_off
   trigger:
