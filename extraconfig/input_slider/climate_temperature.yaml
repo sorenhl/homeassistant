@@ -1,4 +1,6 @@
+
 #stuen
+
 climate_temperature_livingroom_day:
   name: Temperatur i stuen om dagen
   initial: 22
