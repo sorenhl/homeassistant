@@ -1,25 +1,3 @@
-# - alias: Nightmode
-#   trigger:
-#   - platform: state
-#     entity_id: input_boolean.automation_climate_nightmode
-#   action:
-#    - service: climate.set_temperature
-#      data_template:
-#        #entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_3_1
-#        temperature: >
-#         {% if is_state('input_boolean.automation_climate_nightmode', 'on') %}
-#            {{ states('input_slider.climate_temperature_night') }}
-#          {% else %}
-#            {{ states('input_slider.climate_temperature_day') }}
-#          {% endif %}
-#    - service: notify.pushover
-#      data_template:
-#        message: >
-#          {% if is_state('input_boolean.automation_climate_nightmode', 'on') %}
-#            Temperatur sat til {{ states('input_slider.climate_temperature_night') }}
-#          {% else %}
-#            Temperatur sat til {{ states('input_slider.climate_temperature_day') }}
-#          {% endif %}
 
 - alias: Activate nightmode
   trigger: 
@@ -133,6 +111,8 @@
   - condition: state
     entity_id: input_boolean.automation_disable_linked_thermostats
     state: 'off'
+  - condition: template
+    value_template: '{{ {{ trigger.from_state.attributes.temperature }} != trigger.to_state.attributes.temperature }}'
   action:
   - service: climate.set_temperature
     data_template:
@@ -140,7 +120,101 @@
   - service: notify.livingroom_tv
     data_template:
       message: "Setting all radiators to temperature: {{ trigger.to_state.attributes.temperature }}"
+
+##################################################
+# Aktivering / Deaktivering af nattetilstand     #
+##################################################
+- alias: climate_nightmode_on_off
+  trigger:
+  - platform: state
+    entity_id: input_boolean.automation_climate_nightmode
+  action:
+  - service: climate.set_temperature
+    data_template:
+      entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_3_1
+      temperature: >
+        {% if is_state('input_boolean.automation_climate_nightmode', 'on') %}
+          {{ states('input_slider.climate_temperature_livingroom_night') }}
+        {% else %}
+          {{ states('input_slider.climate_temperature_livingroom_day') }}
+        {% endif %}
+  - service: climate.set_temperature
+    data_template:
+      entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_4_1
+      temperature: >
+        {% if is_state('input_boolean.automation_climate_nightmode', 'on') %}
+          {{ states('input_slider.climate_temperature_livingroom_night') }}
+        {% else %}
+          {{ states('input_slider.climate_temperature_livingroom_day') }}
+        {% endif %}
+  - service: climate.set_temperature
+    data_template:
+      entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_5_1
+      temperature: >
+        {% if is_state('input_boolean.automation_climate_nightmode', 'on') %}
+          {{ states('input_slider.climate_temperature_kitchen_night') }}
+        {% else %}
+          {{ states('input_slider.climate_temperature_kitchen_day') }}
+        {% endif %}
+  - service: climate.set_temperature
+    data_template:
+      entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_6_1
+      temperature: >
+        {% if is_state('input_boolean.automation_climate_nightmode', 'on') %}
+          {{ states('input_slider.climate_temperature_hallway_night') }}
+        {% else %}
+          {{ states('input_slider.climate_temperature_hallway_day') }}
+        {% endif %}
+  - service: climate.set_temperature
+    data_template:
+      entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_7_1
+      temperature: >
+        {% if is_state('input_boolean.automation_climate_nightmode', 'on') %}
+          {{ states('input_slider.climate_temperature_bedroom_night') }}
+        {% else %}
+          {{ states('input_slider.climate_temperature_bedroom_day') }}
+        {% endif %}
+  - service: climate.set_temperature
+    data_template:
+      entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_8_1
+      temperature: >
+        {% if is_state('input_boolean.automation_climate_nightmode', 'on') %}
+          {{ states('input_slider.climate_temperature_oliver_night') }}
+        {% else %}
+          {{ states('input_slider.climate_temperature_oliver_day') }}
+        {% endif %}
+  - service: climate.set_temperature
+    data_template:
+      entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_9_1
+      temperature: >
+        {% if is_state('input_boolean.automation_climate_nightmode', 'on') %}
+          {{ states('input_slider.climate_temperature_office_night') }}
+        {% else %}
+          {{ states('input_slider.climate_temperature_office_day') }}
+        {% endif %}
+  - service: climate.set_temperature
+    data_template:
+      entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_9_1
+      temperature: >
+        {% if is_state('input_boolean.automation_climate_nightmode', 'on') %}
+          {{ states('input_slider.climate_temperature_office_night') }}
+        {% else %}
+          {{ states('input_slider.climate_temperature_office_day') }}
+        {% endif %}
+
+
+
+#    - service: notify.pushover
+#      data_template:
+#        message: >
+#          {% if is_state('input_boolean.automation_climate_nightmode', 'on') %}
+#            Temperatur sat til {{ states('input_slider.climate_temperature_night') }}
+#          {% else %}
+#            Temperatur sat til {{ states('input_slider.climate_temperature_day') }}
+#          {% endif %}
       
+
+
 # Nightmode = on
 # Nightmode = off
 # Change temperature in present
