@@ -69,3 +69,23 @@ sudo apt-get install nmap
 sudo apt-get install pure-ftpd
 ```
 
+### Start as a service
+```sh
+sudo su -c 'cat <<EOF >> /etc/systemd/system/home-assistant@pi.service
+[Unit]
+Description=Home Assistant
+After=network.target
+
+[Service]
+Type=simple
+User=%i
+ExecStart=/usr/local/bin/hass
+
+[Install]
+WantedBy=multi-user.target
+EOF'
+sudo systemctl --system daemon-reload
+sudo systemctl enable home-assistant@pi
+sudo systemctl start home-assistant@pi
+sudo systemctl status home-assistant@pi -l
+ ```
