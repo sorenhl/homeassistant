@@ -3,8 +3,69 @@
 
 Remember on Raspberry:
 Timezone:
+```sh
 apt-get install ntpdate
 sudo /etc/init.d/ntp stop
 sudo ntpd -q -g
 sudo /etc/init.d/ntp start
 sudo cp /usr/share/zoneinfo/Europe/Copenhagen  /etc/localtime
+```
+
+
+## Setup
+Remember ssh file to allow ssh without screen
+```sh
+sudo apt-get update
+sudo apt-get upgrade
+```
+### Home-assistant
+```sh
+sudo apt-get install python3 python3-venv python3-pip
+sudo pip3 install homeassistant
+```
+Create secrets.yaml
+Generate ssl key 
+
+### Install home-assistant z-wave
+```sh
+sudo apt-get install cython3 libudev-dev python3-sphinx python3-setuptools git
+sudo pip3 install --upgrade cython==0.24.1
+git clone https://github.com/OpenZWave/python-openzwave.git
+cd python-openzwave
+git checkout python3
+PYTHON_EXEC=$(which python3) make build
+sudo PYTHON_EXEC=$(which python3) make install
+```
+
+### Install zwave control panel
+```sh
+apt-get install libgnutls28-dev libgnutlsxx28
+wget ftp://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-0.9.19.tar.gz
+tar zxvf libmicrohttpd-0.9.19.tar.gz
+mv libmicrohttpd-0.9.19 libmicrohttpd
+cd libmicrohttpd
+./configure
+make
+sudo make install
+cd
+git clone https://github.com/OpenZWave/open-zwave.git
+cd open-zwave
+make
+cd
+git clone https://github.com/OpenZWave/open-zwave-control-panel.git
+cd open-zwave-control-panel
+Modify make file
+  OPENZWAVE := ../open-zwave
+  LIBMICROHTTPD := /usr/local/lib/libmicrohttpd.a
+```
+Note that you may modify some more in the configuration file 
+
+### Aditional installations
+sudo apt-get install nmap
+
+
+### ftp
+```sh
+sudo apt-get install pure-ftpd
+```
+
