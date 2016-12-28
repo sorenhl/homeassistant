@@ -1,7 +1,13 @@
 # homeassistant
 
 
-Remember on Raspberry:
+## Setup
+Remember ssh file to allow ssh without screen
+Update:
+```sh
+sudo apt-get update
+sudo apt-get upgrade
+```
 Timezone:
 ```sh
 apt-get install ntpdate
@@ -12,12 +18,6 @@ sudo cp /usr/share/zoneinfo/Europe/Copenhagen  /etc/localtime
 ```
 
 
-## Setup
-Remember ssh file to allow ssh without screen
-```sh
-sudo apt-get update
-sudo apt-get upgrade
-```
 ### Home-assistant
 ```sh
 sudo apt-get install python3 python3-venv python3-pip
