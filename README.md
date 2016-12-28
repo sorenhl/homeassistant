@@ -89,3 +89,6 @@ sudo systemctl enable home-assistant@pi
 sudo systemctl start home-assistant@pi
 sudo systemctl status home-assistant@pi -l
  ```
+
+### Sonos api
+sudo pm2 startup systemd -u
