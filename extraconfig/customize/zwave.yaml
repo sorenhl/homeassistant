@@ -51,7 +51,7 @@
   #Kontakt i bryggerset
   switch.fibaro_system_fgs223_double_relay_switch_13_0:
     friendly_name: Loftlys i bryggerset
-    icon: mdi:power-socket
+    icon: mdi:lightbulp
   switch.fibaro_system_fgs223_double_relay_switch_13_2:
     friendly_name: Stikkontakt i bryggerset
     icon: mdi:power-socket
@@ -62,11 +62,9 @@
     hidden: true
     friendly_name: FIBARO System FGS223 Double Relay Alarm Type
   sensor.fibaro_system_fgs223_double_relay_energy_13_0:
-    #hidden: true
     friendly_name: Loftlys i bryggerset
     #unit_of_measurement: kWh
   sensor.fibaro_system_fgs223_double_relay_energy_13_0_2:
-    hidden: true
     friendly_name: Stikkontakt i bryggerset
     #unit_of_measurement: kWh
   sensor.fibaro_system_fgs223_double_relay_exporting_13_32:
