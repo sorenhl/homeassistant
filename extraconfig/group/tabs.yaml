@@ -65,9 +65,17 @@
      - group.thermostats
      - group.online_check
 
-  debug:
-    name: Debug
+  buttons:
+    name: Knapper
+    icon: mdi:toggle-switch
     view: yes
     entities:
-     - group.debug_livingroom
-     - group.debug_configurators
+     - group.buttons_livingroom
+     - group.buttons_scullery
+
+  media:
+    name: media
+    icon: mdi:television
+    view: yes
+    entities:
+     - group.media_livingroom

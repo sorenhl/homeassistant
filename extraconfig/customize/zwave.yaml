@@ -48,13 +48,13 @@
   # RALÆER                #
   #########################
 
-  #Kontakt henne ved hjørnet af Stuen
+  #Kontakt i bryggerset
   switch.fibaro_system_fgs223_double_relay_switch_13_0:
-    friendly_name: Glasskabet
+    friendly_name: Loftlys i bryggerset
     icon: mdi:power-socket
   switch.fibaro_system_fgs223_double_relay_switch_13_2:
-    friendly_name: Denne bliver ikke brugt
-    hidden: true
+    friendly_name: Stikkontakt i bryggerset
+    icon: mdi:power-socket
   sensor.fibaro_system_fgs223_double_relay_alarm_level_13_1:
     hidden: true
     friendly_name: FIBARO System FGS223 Double Relay Alarm Level
@@ -63,11 +63,11 @@
     friendly_name: FIBARO System FGS223 Double Relay Alarm Type
   sensor.fibaro_system_fgs223_double_relay_energy_13_0:
     #hidden: true
-    friendly_name: Glasskabet
+    friendly_name: Loftlys i bryggerset
     #unit_of_measurement: kWh
   sensor.fibaro_system_fgs223_double_relay_energy_13_0_2:
     hidden: true
-    friendly_name: FIBARO System FGS223 Double Relay Energy
+    friendly_name: Stikkontakt i bryggerset
     #unit_of_measurement: kWh
   sensor.fibaro_system_fgs223_double_relay_exporting_13_32:
     hidden: true
@@ -79,11 +79,10 @@
     hidden: true
     friendly_name: FIBARO System FGS223 Double Relay Heat
   sensor.fibaro_system_fgs223_double_relay_power_13_8:
-    friendly_name: Glasskabet (Watt)
+    friendly_name: Loftlys i bryggerset (Watt)
     #unit_of_measurement: W
   sensor.fibaro_system_fgs223_double_relay_power_13_8_2:
-    hidden: true
-    friendly_name: FIBARO System FGS223 Double Relay Power
+    friendly_name: Stikkontakt i bryggerset (Watt)
     #unit_of_measurement: W
   sensor.fibaro_system_fgs223_double_relay_power_management_13_11:
     hidden: true

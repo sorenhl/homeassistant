@@ -19,7 +19,12 @@
     entities:
      - light.lampe_i_stuen
      - light.lampe_over_spisebord
-     - switch.fibaro_system_fgs223_double_relay_switch_13_0 # Glasskabet
+
+  lights_scullery:
+    name: Bryggers
+    icon: mdi:lightbulp
+    entities: 
+     - switch.fibaro_system_fgs223_double_relay_switch_13_0 # Loftlys
 
   lights_hallway:
     name: Lys i gangen

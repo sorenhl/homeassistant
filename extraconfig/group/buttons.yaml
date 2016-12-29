@@ -1,11 +1,13 @@
-  debug_livingroom:
+buttons_livingroom:
     name: Stuen
     entities:
      - switch.logic_soft_zhc5010_wall_switch_switch_11_0_2
      - switch.logic_soft_zhc5010_wall_switch_switch_11_0_3
      - switch.logic_soft_zhc5010_wall_switch_switch_11_0_4
      - switch.logic_soft_zhc5010_wall_switch_switch_11_0_5
-  debug_configurators:
-    name: Configurators
-    entities:
-     - configurator.lg_webos_tv
+
+buttons_scullery:
+  name: Bryggerset
+  entities:
+   - switch.fibaro_system_fgs223_double_relay_switch_13_0
+   - switch.fibaro_system_fgs223_double_relay_switch_13_2

@@ -1,0 +1,5 @@
+media_livingroom:
+  name: Stuen
+  entities:
+   - media_player.lg_webos_smart_tv
+   - media_player.stuen
