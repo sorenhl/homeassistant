@@ -18,6 +18,12 @@
     icon: mdi:thermometer-lines
     initial: off
 
+  automation_disable_scullary_lights:
+    name: Deaktiver automatisk lys i bryggers
+    icon: mdi:lightbulb
+    initial: off
+
+
   automation_climate_nightmode:
     name: Nattetilstand
     initial: off

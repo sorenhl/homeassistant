@@ -1,0 +1,33 @@
+- alias: "Automatically turn on when door opens"
+  trigger:
+  - platform: state
+    entity_id: sensor.fibaro_system_fgk10x_door_opening_sensor_access_control_15_9
+    state: '22'
+  condition:
+  - condition: state
+    entity_id: input_boolean.automation_disable_scullary_lights
+    state: 'off'
+  - condition: state
+    entity_id: sun.sun
+    state: 'below_horizon'
+  action:
+  - service: switch.turn_on
+    entity_id: switch.fibaro_system_fgs223_double_relay_switch_13_0
+
+- alias: "Automatically turn off lights"
+  trigger:
+  - platform: state
+    entity_id: switch.fibaro_system_fgs223_double_relay_switch_13_0
+    state: 'on'
+  condition:
+  - condition: state
+    entity_id: input_boolean.automation_disable_scullary_lights
+    state: 'off'
+  - condition: state
+    entity_id: sun.sun
+    state: 'below_horizon'
+  action:
+  - service: homeassistant.turn_off
+    entity_id: script.timed_scullary_light_timer_off
+  - service: homeassistant.turn_on
+    entity_id: script.timed_scullary_light_timer_off
