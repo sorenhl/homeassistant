@@ -24,7 +24,7 @@ sudo apt-get install python3 python3-venv python3-pip
 sudo pip3 install homeassistant
 ```
 Create secrets.yaml
-Generate ssl key 
+Generate ssl key (openssl req -new -x509 -sha256 -newkey rsa:4096 -nodes -keyout privkey.pem -days 730 -out fullchain.pem)
 
 ### Install home-assistant z-wave
 ```sh

@@ -1,8 +1,7 @@
 timed_scullary_light_timer_off:
   alias: "Turn off light after 10 minutes"
   sequence:
-  - delay:
-    seconds: 10
+  - delay: 00:00:10
   - service: switch.turn_off
     data:
       entity_id: switch.fibaro_system_fgs223_double_relay_switch_13_0
