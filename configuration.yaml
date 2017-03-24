@@ -20,8 +20,8 @@ frontend:
 
 http:
   api_password: !secret http_password
-  ssl_certificate: /home/pi/.homeassistant/fullchain.pem
-  ssl_key: /home/pi/.homeassistant/privkey.pem
+  ssl_certificate: /etc/letsencrypt/live/dino.heidelarsen.dk/fullchain.pem
+  ssl_key: /etc/letsencrypt/live/dino.heidelarsen.dk/privkey.pem
 
 #Checks for available updates
 updater:
@@ -41,8 +41,10 @@ logbook:
 # Log stuff
 logger:
   default: error
-  logs:
-    homeassistant.components.media_player: debug
+
+# Recorder stuff
+recorder:
+  db_url: mysql://root:@127.0.0.1/homeassistant
 
 # Track the sun
 sun:
