@@ -11,7 +11,7 @@ import ssl
 """
 BEGIN CUSTOMIZE
 """
-path = "/home/pi/.homeassistant/saved_input_settings.ini" # Path to ini file. ex. "/home/mike/.homeassistant/saved_input_settings.ini"
+path = "/home/homeassistant/.homeassistant/saved_input_settings.ini" # Path to ini file. ex. "/home/mike/.homeassistant/saved_input_settings.ini"
 host = "localhost:8123"         # Host & Port of Home-Assistant. ex. "localhost:8123"
 api_key = ""
 """
