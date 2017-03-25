@@ -92,3 +92,11 @@ sudo systemctl status home-assistant@pi -l
 
 ### Sonos api
 sudo pm2 startup systemd -u
+
+### My SQL
+Bring up MySQL somehow (personally, I brought up a MySQL Docker). But you could just as easily do a sudo apt-get install mysql-server
+
+Install dependencies: sudo apt-get install libmysqlclient-dev and pip3 install mysqlclient
+
+In your configuration.yaml, add a section like is documented here
+https://home-assistant.io/components/recorder/
