@@ -5,6 +5,7 @@ buttons_livingroom:
      - switch.logic_soft_zhc5010_wall_switch_switch_11_0_3
      - switch.logic_soft_zhc5010_wall_switch_switch_11_0_4
      - switch.logic_soft_zhc5010_wall_switch_switch_11_0_5
+     - switch.relay__button_3_1
 
 buttons_scullery:
   name: Bryggerset
