@@ -9,7 +9,7 @@
     entity_id: light.lampe_i_stuen
     data:
       brightness: 254
-  - service: switch.turn_off
+  - service: switch.turn_on
     entity_id: switch.relay__button_3_1
   
 - alias: livingroom_fuga1_knap2_off
