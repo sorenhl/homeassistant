@@ -3,8 +3,8 @@
     name: Home
     icon: mdi:home
     entities:
-     - device_tracker.soren
-     - device_tracker.louise
+     - device_tracker.owntracks_soren
+     - device_tracker.owntracks_louise
      - group.room_livingroom
      - group.room_oliver
      - group.lights_hallway

@@ -62,16 +62,37 @@ light:
   platform: hue
   host: 192.168.1.125
 
-# bluetooth tracking
+# mqtt 
+mqtt:
+  broker: 127.0.0.1
+  client_id: home-assistant-1
+  username: homeassistant
+  password: !secret mqtt
+
+#Example configuration.yaml entry
+mysensors:
+  gateways:
+    - device: mqtt
+     # persistence_file: 'mysensors.json'
+      topic_in_prefix: 'mysensors-out'
+      topic_out_prefix: 'mysensors-in'
+  debug: true
+  optimistic: false
+  #persistence: true
+  #retain: true
+  version: 2.0
+
+#bluetooth tracking
 device_tracker:
-  - platform: asuswrt
-    host: 192.168.1.1
-    username: admin
-    password: !secret router
-    protocol: telnet
-    consider_home: 360
-    home_interval: 10 
-    track_new_devices: no
+  - platform: owntracks
+#  - platform: asuswrt
+#    host: 192.168.1.1
+#    username: admin
+#    password: !secret router
+#    protocol: telnet
+#    consider_home: 360
+#    home_interval: 10 
+#    track_new_devices: no
 #  - platform: bluetooth_tracker
 #    track_new_devices: no
 
