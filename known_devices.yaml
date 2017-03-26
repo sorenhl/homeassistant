@@ -1,11 +1,11 @@
-soren:
+owntracks_soren:
   hide_if_away: false
   mac: !secret soren_mac
   name: Soren
   picture: https://graph.facebook.com/690297200/picture?type=large&w‌​idth=720&height=720
   track: true
 
-louise:
+owntracks_louise:
   hide_if_away: false
   mac: !secret louise_mac
   name: Louise

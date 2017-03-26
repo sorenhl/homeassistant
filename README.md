@@ -100,3 +100,38 @@ Install dependencies: sudo apt-get install libmysqlclient-dev and pip3 install m
 
 In your configuration.yaml, add a section like is documented here
 https://home-assistant.io/components/recorder/
+
+
+### My Sensors
+#### Make make file work
+edit configure file and add this code:
+
+--my-mqtt-user=*)
+    CPPFLAGS="-DMY_MQTT_USER=\\\"${optarg}\\\" $CPPFLAGS"
+    ;;
+--my-mqtt-password=*)
+    CPPFLAGS="-DMY_MQTT_PASSWORD=\\\"${optarg}\\\" $CPPFLAGS"
+    ;;
+after this code:
+
+--my-signing-request-gw-signatures-from-all*)
+        signing_request_signatures=true
+        CPPFLAGS="-DMY_SIGNING_GW_REQUEST_SIGNATURES_FROM_ALL $CPPFLAGS"
+        ;;
+this is about 408 number line
+
+#### Configure
+./configure --my-gateway=mqtt --my-controller-ip-address=127.0.0.1 --my-mqtt-publish-topic-prefix=mysensors-out --my-mqtt-subscribe-topic-prefix=mysensors-in --my-mqtt-client-id=mygateway1 --my-mqtt-user=mysensors --my-mqtt-password=mys3nsors --my-transport=nrf24 --my-rf24-irq-pin=15
+
+sudo systemctl start mysgw.service
+
+#### Debug
+./bin/mysgw -d
+
+### MQTT
+start, stop: /etc/init.d/mosquitto start|stop
+debug: /usr/sbin/mosquitto -c /etc/mosquitto/mosquitto.conf
+
+password:
+mosquitto_passwd -b pwfile mysensors <password>
+
