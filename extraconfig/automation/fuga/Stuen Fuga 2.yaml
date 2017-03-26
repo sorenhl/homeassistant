@@ -5,10 +5,12 @@
     from: 'off'
     to: 'on'
   action:
-    service: light.turn_on 
+  - service: light.turn_on 
     entity_id: light.lampe_i_stuen
     data:
       brightness: 254
+  - service: switch.turn_off
+    entity_id: switch.relay__button_3_1
   
 - alias: livingroom_fuga1_knap2_off
   trigger:
@@ -17,8 +19,10 @@
       from: 'on'
       to: 'off'
   action:
-    service: light.turn_off
+  - service: light.turn_off
     entity_id: light.lampe_i_stuen
+  - service: switch.turn_off
+    entity_id: switch.relay__button_3_1
 
 - alias: livingroom_fuga2_lamp_on
   trigger:
