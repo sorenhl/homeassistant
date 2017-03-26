@@ -121,7 +121,7 @@ after this code:
 this is about 408 number line
 
 #### Configure
-./configure --my-gateway=mqtt --my-controller-ip-address=127.0.0.1 --my-mqtt-publish-topic-prefix=mysensors-out --my-mqtt-subscribe-topic-prefix=mysensors-in --my-mqtt-client-id=mygateway1 --my-mqtt-user=mysensors --my-mqtt-password=mys3nsors --my-transport=nrf24 --my-rf24-irq-pin=15
+./configure --my-gateway=mqtt --my-controller-ip-address=127.0.0.1 --my-mqtt-publish-topic-prefix=mysensors-out --my-mqtt-subscribe-topic-prefix=mysensors-in --my-mqtt-client-id=mygateway1 --my-mqtt-user=mysensors --my-mqtt-password=<password> --my-transport=nrf24 --my-rf24-irq-pin=15
 
 sudo systemctl start mysgw.service
 
