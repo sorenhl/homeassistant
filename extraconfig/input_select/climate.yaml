@@ -125,7 +125,7 @@ climate_temperature_kitchen_day:
 # Oliver
 climate_temperature_oliver_day:
   name: Temperatur på Olivers værelse om dagen
-    options:
+  options:
    - 15
    - 15.5
    - 16
@@ -153,7 +153,7 @@ climate_temperature_oliver_day:
 # Gangen
 climate_temperature_hallway_day:
   name: Temperatur i gangen om dagen
-    options:
+  options:
    - 15
    - 15.5
    - 16

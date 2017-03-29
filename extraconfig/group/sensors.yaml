@@ -1,8 +1,8 @@
   household:
     name: Husstand
     entities:
-     - device_tracker.soren
-     - device_tracker.louise
+     - device_tracker.owntracks_soren
+     - device_tracker.owntracks_louise
 
   speedtest:
     name: Speed test
