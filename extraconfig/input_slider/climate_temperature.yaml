@@ -1,120 +1,69 @@
 
-# #stuen
+#stuen
 
-# climate_temperature_livingroom_day:
-#   name: Temperatur i stuen om dagen
-#   initial: 22
-#   min: 15
-#   max: 25
-#   step: 0.5
-#   icon: mdi:temperature-celsius
+climate_temperature_livingroom_day:
+  name: Temperatur i stuen om dagen
+  initial: 22
+  min: 15
+  max: 25
+  step: 0.5
+  icon: mdi:temperature-celsius
 
-# climate_temperature_livingroom_night:
-#   name: Temperatur i stuen om natten
-#   initial: 22
-#   min: 15
-#   max: 25
-#   step: 0.5
-#   icon: mdi:temperature-celsius
 
-# # Køkken
-# climate_temperature_kitchen_day:
-#   name: Temperatur i køkkenet om dagen
-#   initial: 22
-#   min: 15
-#   max: 25
-#   step: 0.5
-#   icon: mdi:temperature-celsius
+# Køkken
+climate_temperature_kitchen_day:
+  name: Temperatur i køkkenet om dagen
+  initial: 22
+  min: 15
+  max: 25
+  step: 0.5
+  icon: mdi:temperature-celsius
 
-# climate_temperature_kitchen_night:
-#   name: Temperatur i køkkenet om natten
-#   initial: 22
-#   min: 15
-#   max: 25
-#   step: 0.5
-#   icon: mdi:temperature-celsius
+# Oliver
+climate_temperature_oliver_day:
+  name: Temperatur på Olivers værelse om dagen
+  initial: 22
+  min: 15
+  max: 25
+  step: 0.5
+  icon: mdi:temperature-celsius
 
-# # Oliver
-# climate_temperature_oliver_day:
-#   name: Temperatur på Olivers værelse om dagen
-#   initial: 22
-#   min: 15
-#   max: 25
-#   step: 0.5
-#   icon: mdi:temperature-celsius
 
-# climate_temperature_oliver_night:
-#   name: Temperatur på Olivers værelse om natten
-#   initial: 22
-#   min: 15
-#   max: 25
-#   step: 0.5
-#   icon: mdi:temperature-celsius
+# Gangen
+climate_temperature_hallway_day:
+  name: Temperatur i gangen om dagen
+  initial: 22
+  min: 15
+  max: 25
+  step: 0.5
+  icon: mdi:temperature-celsius
 
-# # Gangen
-# climate_temperature_hallway_day:
-#   name: Temperatur i gangen om dagen
-#   initial: 22
-#   min: 15
-#   max: 25
-#   step: 0.5
-#   icon: mdi:temperature-celsius
 
-# climate_temperature_hallway_night:
-#   name: Temperatur i gangen om natten
-#   initial: 22
-#   min: 15
-#   max: 25
-#   step: 0.5
-#   icon: mdi:temperature-celsius
+# Badeværelse
+climate_temperature_bathroom_day:
+  name: Temperatur i badeværelset om dagen
+  initial: 22
+  min: 15
+  max: 25
+  step: 0.5
+  icon: mdi:temperature-celsius
 
-# # Badeværelse
-# climate_temperature_bathroom_day:
-#   name: Temperatur i badeværelset om dagen
-#   initial: 22
-#   min: 15
-#   max: 25
-#   step: 0.5
-#   icon: mdi:temperature-celsius
 
-# climate_temperature_bathroom_night:
-#   name: Temperatur i badeværelset om natten
-#   initial: 22
-#   min: 15
-#   max: 25
-#   step: 0.5
-#   icon: mdi:temperature-celsius
+# Soveværelse
+climate_temperature_bedroom_day:
+  name: Temperatur i soveværelset om dagen
+  initial: 22
+  min: 15
+  max: 25
+  step: 0.5
+  icon: mdi:temperature-celsius
 
-# # Soveværelse
-# climate_temperature_bedroom_day:
-#   name: Temperatur i soveværelset om dagen
-#   initial: 22
-#   min: 15
-#   max: 25
-#   step: 0.5
-#   icon: mdi:temperature-celsius
+# Kontor
+climate_temperature_office_day:
+  name: Temperatur på kontoret om dagen
+  initial: 22
+  min: 15
+  max: 25
+  step: 0.5
+  icon: mdi:temperature-celsius
 
-# climate_temperature_bedroom_night:
-#   name: Temperatur i soveværelset om natten
-#   initial: 22
-#   min: 15
-#   max: 25
-#   step: 0.5
-#   icon: mdi:temperature-celsius
-
-# # Kontor
-# climate_temperature_office_day:
-#   name: Temperatur på kontoret om dagen
-#   initial: 22
-#   min: 15
-#   max: 25
-#   step: 0.5
-#   icon: mdi:temperature-celsius
-
-# climate_temperature_office_night:
-#   name: Temperatur på kontoret om natten
-#   initial: 22
-#   min: 15
-#   max: 25
-#   step: 0.5
-#   icon: mdi:temperature-celsius

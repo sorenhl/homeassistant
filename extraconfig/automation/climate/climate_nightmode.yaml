@@ -6,7 +6,7 @@
     seconds: 0
   condition:
   - condition: template
-    value_template: "{{ now().strftime('%H:%M') == states('input_select.clima_nightmode_from') }}"
+    value_template: "{{ now().strftime('%H:%M') == states('input_slider.clima_nightmode_from') }}"
   - condition: state
     entity_id: input_boolean.automation_disable_climate_nightmode
     state: 'off'
@@ -21,7 +21,7 @@
     seconds: 0
   condition:
   - condition: template
-    value_template: "{{ now().strftime('%H:%M') == states('input_select.clima_nightmode_to') }}"
+    value_template: "{{ now().strftime('%H:%M') == states('input_slider.clima_nightmode_to') }}"
   - condition: state
     entity_id: input_boolean.automation_disable_climate_nightmode
     state: 'off'
@@ -53,32 +53,29 @@
   - platform: state
     entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_10_1
   condition:
-  # - condition: state
-  #   entity_id: input_boolean.automation_disable_linked_thermostats
-  #   state: 'on' # Only do this when thermostats are not linked
   - condition: state
     entity_id: input_boolean.automation_climate_nightmode
     state: 'off' # ONLY change values when it is day, otherwise we will override day temperatures with night
   action:
-  - service: input_select.select_option
+  - service: input_slider.select_value
     data_template:
       entity_id: >
         {%- if trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_3_1' -%}
-          input_select.climate_temperature_livingroom_day
+          input_slider.climate_temperature_livingroom_day
         {%- elif trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_4_1' -%}
-          input_select.climate_temperature_livingroom_day
+          input_slider.climate_temperature_livingroom_day
         {%- elif trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_5_1' -%}
-          input_stelect.climate_temperature_kitchen_day
+          input_slider.climate_temperature_kitchen_day
         {%- elif trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_6_1' -%}
-          input_select.climate_temperature_hallway_day
+          input_slider.climate_temperature_hallway_day
         {%- elif trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_7_1' -%}
-          input_select.climate_temperature_bedroom_day
+          input_slider.climate_temperature_bedroom_day
         {%- elif trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_8_1' -%}
-          input_select.climate_temperature_oliver_day
+          input_slider.climate_temperature_oliver_day
         {%- elif trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_9_1' -%}
-          input_select.climate_temperature_office_day
+          input_slider.climate_temperature_office_day
         {%- elif trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_10_1' -%}
-          input_select.climate_temperature_bathroom_day
+          input_slider.climate_temperature_bathroom_day
         {% endif -%}
       option: "{{ trigger.to_state.attributes.temperature }}"
 #  - service: notify.livingroom_tv
@@ -86,89 +83,89 @@
 #      message: "Node id: {{ trigger.to_state.attributes.node_id }} = {{ trigger.to_state.attributes.temperature }}"
 
 
-# ##################################################
-# # Links ALL radiators together                   #
-# ##################################################
-# - alias: climate_link_all_thermostats_together
-#   trigger:
-#   - platform: state
-#     entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_3_1
-#   - platform: state
-#     entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_4_1
-#   - platform: state
-#     entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_5_1
-#   - platform: state
-#     entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_6_1
-#   - platform: state
-#     entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_7_1
-#   - platform: state
-#     entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_8_1
-#   - platform: state
-#     entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_9_1
-#   - platform: state
-#     entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_10_1
-#   condition:
-#   - condition: state
-#     entity_id: input_boolean.automation_climate_nightmode
-#     state: 'off' # ONLY change values when it is day, otherwise we will override day temperatures with night
-#   - condition: state
-#     entity_id: input_boolean.automation_disable_linked_thermostats
-#     state: 'off'
-#   - condition: template
-#     value_template: > 
-#       {{
-#         trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_3_1'
-#         and trigger.to_state.attributes.temperature != states('input_select.climate_temperature_livingroom_day')
-#         or trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_4_1'
-#         and trigger.to_state.attributes.temperature != states('input_select.climate_temperature_livingroom_day')
-#         or trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_5_1'
-#         and trigger.to_state.attributes.temperature != states('input_select.climate_temperature_kitchen_day')
-#         or trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_6_1'
-#         and trigger.to_state.attributes.temperature != states('input_select.climate_temperature_hallway_day')
-#         or trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_7_1'
-#         and trigger.to_state.attributes.temperature != states('input_select.climate_temperature_bedroom_day')
-#         or trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_8_1'
-#         and trigger.to_state.attributes.temperature != states('input_select.climate_temperature_oliver_day')
-#         or trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_9_1'
-#         and trigger.to_state.attributes.temperature != states('input_select.climate_temperature_office_day')
-#         or trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_10_1'
-#         and trigger.to_state.attributes.temperature != states('input_select.climate_temperature_bathroom_day')
-#       }}
-#   action:
-#   - service: climate.set_temperature
-#     data_template:
-#       temperature: '{{ trigger.to_state.attributes.temperature }}'
-#   - service: input_select.select_value
-#     data_template:
-#       entity_id: 'input_select.climate_temperature_livingroom_day'
-#       value: '{{ trigger.to_state.attributes.temperature }}'
-#   - service: input_select.select_value
-#     data_template:
-#       entity_id: 'input_select.climate_temperature_kitchen_day'
-#       value: '{{ trigger.to_state.attributes.temperature }}'
-#   - service: input_select.select_value
-#     data_template:
-#       entity_id: 'input_select.climate_temperature_hallway_day'
-#       value: '{{ trigger.to_state.attributes.temperature }}'
-#   - service: input_select.select_value
-#     data_template:
-#       entity_id: 'input_select.climate_temperature_bedroom_day'
-#       value: '{{ trigger.to_state.attributes.temperature }}'
-#   - service: input_select.select_value
-#     data_template:
-#       entity_id: 'input_select.climate_temperature_oliver_day'
-#       value: '{{ trigger.to_state.attributes.temperature }}'
-#   - service: input_select.select_value
-#     data_template:
-#       entity_id: 'input_select.climate_temperature_office_day'
-#       value: '{{ trigger.to_state.attributes.temperature }}'
-#   - service: input_select.select_value
-#     data_template:
-#       entity_id: 'input_select.climate_temperature_bathroom_day'
-#       value: '{{ trigger.to_state.attributes.temperature }}'
-#   - service: notify.livingroom_tv
-#     data_template:
-#       message: "Temperaturen er nu ændret fra {{ trigger.from_state.attributes.temperature }} til {{ trigger.to_state.attributes.temperature }}"
+##################################################
+# Links ALL radiators together                   #
+##################################################
+- alias: climate_link_all_thermostats_together
+  trigger:
+  - platform: state
+    entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_3_1
+  - platform: state
+    entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_4_1
+  - platform: state
+    entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_5_1
+  - platform: state
+    entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_6_1
+  - platform: state
+    entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_7_1
+  - platform: state
+    entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_8_1
+  - platform: state
+    entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_9_1
+  - platform: state
+    entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_10_1
+  condition:
+  - condition: state
+    entity_id: input_boolean.automation_climate_nightmode
+    state: 'off' # ONLY change values when it is day, otherwise we will override day temperatures with night
+  - condition: state
+    entity_id: input_boolean.automation_disable_linked_thermostats
+    state: 'off'
+  - condition: template
+    value_template: > 
+      {{
+        trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_3_1'
+        and trigger.to_state.attributes.temperature != states('input_slider.climate_temperature_livingroom_day')
+        or trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_4_1'
+        and trigger.to_state.attributes.temperature != states('input_slider.climate_temperature_livingroom_day')
+        or trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_5_1'
+        and trigger.to_state.attributes.temperature != states('input_slider.climate_temperature_kitchen_day')
+        or trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_6_1'
+        and trigger.to_state.attributes.temperature != states('input_slider.climate_temperature_hallway_day')
+        or trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_7_1'
+        and trigger.to_state.attributes.temperature != states('input_slider.climate_temperature_bedroom_day')
+        or trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_8_1'
+        and trigger.to_state.attributes.temperature != states('input_slider.climate_temperature_oliver_day')
+        or trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_9_1'
+        and trigger.to_state.attributes.temperature != states('input_slider.climate_temperature_office_day')
+        or trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_10_1'
+        and trigger.to_state.attributes.temperature != states('input_slider.climate_temperature_bathroom_day')
+      }}
+  action:
+  - service: climate.set_temperature
+    data_template:
+      temperature: '{{ trigger.to_state.attributes.temperature }}'
+  - service: input_slider.select_value
+    data_template:
+      entity_id: 'input_slider.climate_temperature_livingroom_day'
+      value: '{{ trigger.to_state.attributes.temperature }}'
+  - service: input_slider.select_value
+    data_template:
+      entity_id: 'input_slider.climate_temperature_kitchen_day'
+      value: '{{ trigger.to_state.attributes.temperature }}'
+  - service: input_slider.select_value
+    data_template:
+      entity_id: 'input_slider.climate_temperature_hallway_day'
+      value: '{{ trigger.to_state.attributes.temperature }}'
+  - service: input_slider.select_value
+    data_template:
+      entity_id: 'input_slider.climate_temperature_bedroom_day'
+      value: '{{ trigger.to_state.attributes.temperature }}'
+  - service: input_slider.select_value
+    data_template:
+      entity_id: 'input_slider.climate_temperature_oliver_day'
+      value: '{{ trigger.to_state.attributes.temperature }}'
+  - service: input_slider.select_value
+    data_template:
+      entity_id: 'input_slider.climate_temperature_office_day'
+      value: '{{ trigger.to_state.attributes.temperature }}'
+  - service: input_slider.select_value
+    data_template:
+      entity_id: 'input_slider.climate_temperature_bathroom_day'
+      value: '{{ trigger.to_state.attributes.temperature }}'
+  - service: notify.livingroom_tv
+    data_template:
+      message: "Temperaturen er nu ændret fra {{ trigger.from_state.attributes.temperature }} til {{ trigger.to_state.attributes.temperature }}"
 
 ##################################################
 # Aktivering / Deaktivering af nattetilstand     #
@@ -185,7 +182,7 @@
         {% if is_state('input_boolean.automation_climate_nightmode', 'on') %}
           {{ states('input_select.climate_nightmode_temperature') }}
         {% else %}
-          {{ states('input_select.climate_temperature_livingroom_day') }}
+          {{ states('input_slider.climate_temperature_livingroom_day') }}
         {% endif %}
   - service: climate.set_temperature
     data_template:
@@ -194,7 +191,7 @@
         {% if is_state('input_boolean.automation_climate_nightmode', 'on') %}
           {{ states('input_select.climate_nightmode_temperature') }}
         {% else %}
-          {{ states('input_select.climate_temperature_livingroom_day') }}
+          {{ states('input_slider.climate_temperature_livingroom_day') }}
         {% endif %}
   - service: climate.set_temperature
     data_template:
@@ -203,7 +200,7 @@
         {% if is_state('input_boolean.automation_climate_nightmode', 'on') %}
           {{ states('input_select.climate_nightmode_temperature') }}
         {% else %}
-          {{ states('input_select.climate_temperature_kitchen_day') }}
+          {{ states('input_slider.climate_temperature_kitchen_day') }}
         {% endif %}
   - service: climate.set_temperature
     data_template:
@@ -212,7 +209,7 @@
         {% if is_state('input_boolean.automation_climate_nightmode', 'on') %}
           {{ states('input_select.climate_nightmode_temperature') }}
         {% else %}
-          {{ states('input_select.climate_temperature_hallway_day') }}
+          {{ states('input_slider.climate_temperature_hallway_day') }}
         {% endif %}
   - service: climate.set_temperature
     data_template:
@@ -221,7 +218,7 @@
         {% if is_state('input_boolean.automation_climate_nightmode', 'on') %}
           {{ states('input_select.climate_nightmode_temperature') }}
         {% else %}
-          {{ states('input_select.climate_temperature_bedroom_day') }}
+          {{ states('input_slider.climate_temperature_bedroom_day') }}
         {% endif %}
   - service: climate.set_temperature
     data_template:
@@ -230,7 +227,7 @@
         {% if is_state('input_boolean.automation_climate_nightmode', 'on') %}
           {{ states('input_select.climate_nightmode_temperature') }}
         {% else %}
-          {{ states('input_select.climate_temperature_oliver_day') }}
+          {{ states('input_slider.climate_temperature_oliver_day') }}
         {% endif %}
   - service: climate.set_temperature
     data_template:
@@ -239,16 +236,16 @@
         {% if is_state('input_boolean.automation_climate_nightmode', 'on') %}
           {{ states('input_select.climate_nightmode_temperature') }}
         {% else %}
-          {{ states('input_select.climate_temperature_office_day') }}
+          {{ states('input_slider.climate_temperature_office_day') }}
         {% endif %}
   - service: climate.set_temperature
     data_template:
       entity_id: climate.danfoss_z_thermostat_014g0013_heating_1_10_1
       temperature: >
         {% if is_state('input_boolean.automation_climate_nightmode', 'on') %}
-          {{ states('input_select.climate_temperature_bathroom_night') }}
+          {{ states('input_slider.climate_temperature_bathroom_night') }}
         {% else %}
-          {{ states('input_select.climate_temperature_bathroom_day') }}
+          {{ states('input_slider.climate_temperature_bathroom_day') }}
         {% endif %}
 
 
