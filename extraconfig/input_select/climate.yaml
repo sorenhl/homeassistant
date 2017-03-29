@@ -1,0 +1,265 @@
+climate_nightmode_from:
+  name: Sænk temperaturen fra kl.
+  options:
+   - '20:00'
+   - '20:15'
+   - '20:30'
+   - '20:45'
+   - '21:00'
+   - '21:15'
+   - '21:30'
+   - '21:45'
+   - '22:00'
+   - '22:15'
+   - '22:30'
+   - '22:45'
+   - '23:00'
+   - '23:15'
+   - '23:30'
+   - '23:45'
+  initial: '22:00'
+
+climate_nightmode_to:
+  name: Hæv temperaturen igen fra kl.
+  options:
+   - '04:00'
+   - '04:15'
+   - '04:30'
+   - '04:45'
+   - '05:00'
+   - '05:15'
+   - '05:30'
+   - '05:45'
+   - '06:00'
+   - '06:15'
+   - '06:30'
+   - '06:45'
+  initial: '04:00'
+
+
+climate_nightmode_temperature:
+  name: Temperatur om natten
+  options:
+   - 15
+   - 15.5
+   - 16
+   - 16.5
+   - 17
+   - 17.5
+   - 18
+   - 18.5
+   - 19
+   - 19.5
+   - 20
+   - 20.5
+   - 21
+   - 21.5
+   - 22
+   - 22.5
+   - 23
+   - 23.5
+   - 24
+   - 24.5
+   - 25
+  initial: 22
+  icon: mdi:temperature-celsius
+
+#stuen
+
+climate_temperature_livingroom_day:
+  name: Temperatur i stuen
+  options:
+   - 15
+   - 15.5
+   - 16
+   - 16.5
+   - 17
+   - 17.5
+   - 18
+   - 18.5
+   - 19
+   - 19.5
+   - 20
+   - 20.5
+   - 21
+   - 21.5
+   - 22
+   - 22.5
+   - 23
+   - 23.5
+   - 24
+   - 24.5
+   - 25
+  initial: 22
+  icon: mdi:temperature-celsius
+
+# Køkken
+climate_temperature_kitchen_day:
+  name: Temperatur i køkkenet
+  options:
+   - 15
+   - 15.5
+   - 16
+   - 16.5
+   - 17
+   - 17.5
+   - 18
+   - 18.5
+   - 19
+   - 19.5
+   - 20
+   - 20.5
+   - 21
+   - 21.5
+   - 22
+   - 22.5
+   - 23
+   - 23.5
+   - 24
+   - 24.5
+   - 25
+  initial: 22
+  icon: mdi:temperature-celsius
+
+
+# Oliver
+climate_temperature_oliver_day:
+  name: Temperatur på Olivers værelse om dagen
+    options:
+   - 15
+   - 15.5
+   - 16
+   - 16.5
+   - 17
+   - 17.5
+   - 18
+   - 18.5
+   - 19
+   - 19.5
+   - 20
+   - 20.5
+   - 21
+   - 21.5
+   - 22
+   - 22.5
+   - 23
+   - 23.5
+   - 24
+   - 24.5
+   - 25
+  initial: 22
+  icon: mdi:temperature-celsius
+
+# Gangen
+climate_temperature_hallway_day:
+  name: Temperatur i gangen om dagen
+    options:
+   - 15
+   - 15.5
+   - 16
+   - 16.5
+   - 17
+   - 17.5
+   - 18
+   - 18.5
+   - 19
+   - 19.5
+   - 20
+   - 20.5
+   - 21
+   - 21.5
+   - 22
+   - 22.5
+   - 23
+   - 23.5
+   - 24
+   - 24.5
+   - 25
+  initial: 22
+  icon: mdi:temperature-celsius
+  
+
+# Badeværelse
+climate_temperature_bathroom_day:
+  name: Temperatur i badeværelset om dagen
+  options:
+   - 15
+   - 15.5
+   - 16
+   - 16.5
+   - 17
+   - 17.5
+   - 18
+   - 18.5
+   - 19
+   - 19.5
+   - 20
+   - 20.5
+   - 21
+   - 21.5
+   - 22
+   - 22.5
+   - 23
+   - 23.5
+   - 24
+   - 24.5
+   - 25
+  initial: 22
+  icon: mdi:temperature-celsius
+  
+
+# Soveværelse
+climate_temperature_bedroom_day:
+  name: Temperatur i soveværelset om dagen
+  options:
+   - 15
+   - 15.5
+   - 16
+   - 16.5
+   - 17
+   - 17.5
+   - 18
+   - 18.5
+   - 19
+   - 19.5
+   - 20
+   - 20.5
+   - 21
+   - 21.5
+   - 22
+   - 22.5
+   - 23
+   - 23.5
+   - 24
+   - 24.5
+   - 25
+  initial: 22
+  icon: mdi:temperature-celsius
+  
+# Kontor
+climate_temperature_office_day:
+  name: Temperatur på kontoret om dagen
+  options:
+   - 15
+   - 15.5
+   - 16
+   - 16.5
+   - 17
+   - 17.5
+   - 18
+   - 18.5
+   - 19
+   - 19.5
+   - 20
+   - 20.5
+   - 21
+   - 21.5
+   - 22
+   - 22.5
+   - 23
+   - 23.5
+   - 24
+   - 24.5
+   - 25
+  initial: 22
+  icon: mdi:temperature-celsius
