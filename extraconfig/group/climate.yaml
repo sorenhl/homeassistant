@@ -1,8 +1,8 @@
   climate_nightmode:
     name: Nattetilstand for thermostater
     entities:
-     - input_select.clima_nightmode_from
-     - input_select.clima_nightmode_to
+     - input_select.climate_nightmode_from
+     - input_select.climate_nightmode_to
      - input_select.climate_nightmode_temperature
      - input_boolean.automation_climate_nightmode
      - input_select.climate_temperature_livingroom_day
