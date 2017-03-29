@@ -77,7 +77,7 @@
         {%- elif trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_10_1' -%}
           input_slider.climate_temperature_bathroom_day
         {% endif -%}
-      option: "{{ trigger.to_state.attributes.temperature }}"
+      value: "{{ trigger.to_state.attributes.temperature }}"
 #  - service: notify.livingroom_tv
 #    data_template:
 #      message: "Node id: {{ trigger.to_state.attributes.node_id }} = {{ trigger.to_state.attributes.temperature }}"
