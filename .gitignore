@@ -1,0 +1,11 @@
+.HA_VERSION
+.uuid
+OZW_Log.txt
+deps/
+home-assistant.log
+mysensors1.pickle
+phue.conf
+pyozw.sqlite
+saved_input_settings.ini
+secrets.yaml
+webostv.conf
