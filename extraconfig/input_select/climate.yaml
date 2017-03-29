@@ -57,6 +57,6 @@ climate_nightmode_temperature:
    - 22.0
    - 22.5
    - 23.0
-  initial: 20
+  initial: 20.0
   icon: mdi:temperature-celsius
 
