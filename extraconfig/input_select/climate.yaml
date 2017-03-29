@@ -69,28 +69,28 @@ climate_nightmode_temperature:
 climate_temperature_livingroom_day:
   name: Temperatur i stuen
   options:
-   - 15
-   - 15.5
-   - 16
-   - 16.5
-   - 17
-   - 17.5
-   - 18
-   - 18.5
-   - 19
-   - 19.5
-   - 20
-   - 20.5
-   - 21
-   - 21.5
-   - 22
-   - 22.5
-   - 23
-   - 23.5
-   - 24
-   - 24.5
-   - 25
-  initial: 22
+   - '15'
+   - '15.5'
+   - '16'
+   - '16.5'
+   - '17'
+   - '17.5'
+   - '18'
+   - '18.5'
+   - '19'
+   - '19.5'
+   - '20'
+   - '20.5'
+   - '21'
+   - '21.5'
+   - '22'
+   - '22.5'
+   - '23'
+   - '23.5'
+   - '24'
+   - '24.5'
+   - '25'
+  initial: '22'
   icon: mdi:temperature-celsius
 
 # Køkken
