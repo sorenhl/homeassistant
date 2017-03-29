@@ -65,22 +65,22 @@
       entity_id: >
         {%- if trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_3_1' -%}
           input_select.climate_temperature_livingroom_day
-        {%- elif rigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_4_1' -%}
+        {%- elif trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_4_1' -%}
           input_select.climate_temperature_livingroom_day
-        {%- elif rigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_5_1' -%}
-          input_select.climate_temperature_kitchen_day
-        {%- elif rigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_6_1' -%}
+        {%- elif trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_5_1' -%}
+          input_stelect.climate_temperature_kitchen_day
+        {%- elif trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_6_1' -%}
           input_select.climate_temperature_hallway_day
-        {%- elif rigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_7_1' -%}
+        {%- elif trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_7_1' -%}
           input_select.climate_temperature_bedroom_day
-        {%- elif rigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_8_1' -%}
+        {%- elif trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_8_1' -%}
           input_select.climate_temperature_oliver_day
-        {%- elif rigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_9_1' -%}
+        {%- elif trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_9_1' -%}
           input_select.climate_temperature_office_day
-        {%- elif rigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_10_1' -%}
+        {%- elif trigger.entity_id == 'climate.danfoss_z_thermostat_014g0013_heating_1_10_1' -%}
           input_select.climate_temperature_bathroom_day
         {% endif -%}
-      value: "{{ trigger.to_state.attributes.temperature }}"
+      option: "{{ trigger.to_state.attributes.temperature }}"
 #  - service: notify.livingroom_tv
 #    data_template:
 #      message: "Node id: {{ trigger.to_state.attributes.node_id }} = {{ trigger.to_state.attributes.temperature }}"
