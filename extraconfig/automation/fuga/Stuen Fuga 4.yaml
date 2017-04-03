@@ -7,7 +7,7 @@
   action:
   - service: media_player.turn_off
     entity_id: media_player.lg_webos_smart_tv
-  - service: shell_command.sonos_play_julesange
+  - service: shell_command.sonos_play_coffeehouse
   - service: shell_command.sonos_volume
     data:
       volume: 12
