@@ -85,14 +85,14 @@ mysensors:
 #bluetooth tracking
 device_tracker:
   - platform: owntracks
-#  - platform: asuswrt
-#    host: 192.168.1.1
-#    username: admin
-#    password: !secret router
-#    protocol: telnet
-#    consider_home: 360
-#    home_interval: 10 
-#    track_new_devices: no
+  - platform: asuswrt
+    host: 192.168.1.1
+    username: admin
+    password: !secret router
+    protocol: telnet
+    consider_home: 360
+    home_interval: 10 
+    track_new_devices: no
 #  - platform: bluetooth_tracker
 #    track_new_devices: no
 

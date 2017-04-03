@@ -94,9 +94,28 @@ sudo systemctl status home-assistant@pi -l
 sudo pm2 startup systemd -u
 
 ### My SQL
-Bring up MySQL somehow (personally, I brought up a MySQL Docker). But you could just as easily do a sudo apt-get install mysql-server
+Install
+```sh
 
-Install dependencies: sudo apt-get install libmysqlclient-dev and pip3 install mysqlclient
+# My SQL Server
+sudo apt-get install mysql-server --fix-missing
+sudo nano /etc/mysql/my.cnf - change bind-address to 0.0.0.0
+sudo service mysql restart
+mysql -uroot -hlocalhost -p
+```
+SQL Commands:
+```sql
+CREATE DATABASE homeassistant;
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('');
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+```
+
+#My sql client
+
+
+Install dependencies: 
+sudo apt-get install libmysqlclient-dev && pip3 install mysqlclient
 
 In your configuration.yaml, add a section like is documented here
 https://home-assistant.io/components/recorder/
