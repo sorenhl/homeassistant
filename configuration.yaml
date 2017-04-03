@@ -44,6 +44,7 @@ logger:
 
 # Recorder stuff
 recorder:
+  purge_days: 10
   db_url: mysql://root:@127.0.0.1/homeassistant
 
 # Track the sun

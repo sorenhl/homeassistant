@@ -94,11 +94,14 @@ sudo systemctl status home-assistant@pi -l
 sudo pm2 startup systemd -u
 
 ### My SQL
+https://home-assistant.io/components/recorder/
 Install
 ```sh
 
 # My SQL Server
 sudo apt-get install mysql-server --fix-missing
+sudo apt-get install python-mysqldb
+sudo apt-get install && sudo pip3 install mysqlclient
 sudo nano /etc/mysql/my.cnf - change bind-address to 0.0.0.0
 sudo service mysql restart
 mysql -uroot -hlocalhost -p
@@ -111,14 +114,6 @@ GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 ```
 
-#My sql client
-
-
-Install dependencies: 
-sudo apt-get install libmysqlclient-dev && pip3 install mysqlclient
-
-In your configuration.yaml, add a section like is documented here
-https://home-assistant.io/components/recorder/
 
 
 ### My Sensors
@@ -154,3 +149,14 @@ debug: /usr/sbin/mosquitto -c /etc/mosquitto/mosquitto.conf
 password:
 mosquitto_passwd -b pwfile mysensors <password>
 
+### Plex
+https://plex.tv/devices.xml
+
+### homebridge
+1. Install homebridge
+2. cd. /usr/local/lib/node_modules
+3. sudo git clone https://github.com/sorenhl/homebridge-homeassistant
+4. cd homebridge-homeassistant && sudo npm install
+5. cp homebridge/config-sample.json /home/pi/.homebridge/config.json
+6. Copy from https://github.com/sorenhl/homebridge-homeassistant and remember to add dino.heidelarsen.dk in /etc/hosts to allow SSL certificate
+7. pm2 start /usr/local/bin/homebridge -n Homebridge"
