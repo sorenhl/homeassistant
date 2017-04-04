@@ -2,7 +2,8 @@
   trigger:
   - platform: state
     entity_id: binary_sensor.living_room_occupied
-    state: 'on'
+    from: 'off'
+    to: 'on'
   condition:
   - condition: state
     entity_id: input_boolean.automation_disable_living_room_lights
@@ -21,7 +22,8 @@
   trigger:
   - platform: state
     entity_id: binary_sensor.living_room_occupied
-    state: 'off'
+    from: 'on'
+    to: 'off'
   condition:
   - condition: state
     entity_id: input_boolean.automation_disable_living_room_lights
