@@ -1,7 +1,9 @@
   room_livingroom:
     name: Stuen
     entities:
-     - group.lights_livingroom
+     - light.lampe_i_stuen
+     - light.lampe_over_spisebord
+     - switch.relay__button_3_1
      - climate.danfoss_z_thermostat_014g0013_heating_1_3_1
      - climate.danfoss_z_thermostat_014g0013_heating_1_4_1
      - binary_sensor.living_room_occupied
@@ -9,6 +11,7 @@
      - sensor.aeotec_zw100_multisensor_6_relative_humidity_2_5
      - sensor.aeotec_zw100_multisensor_6_temperature_2_1
      - sensor.aeotec_zw100_multisensor_6_ultraviolet_2_27
+
 
   room_oliver:
     name: Olivers værelse

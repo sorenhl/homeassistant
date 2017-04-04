@@ -163,3 +163,4 @@ https://plex.tv/devices.xml
 
 ## Pi Others
 sudo shutdown -h now
+sudo su -c '/srv/homeassistant/homeassistant_venv/bin/hass --script check_config' homeassistant
