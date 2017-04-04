@@ -10,3 +10,4 @@
         }}
       friendly_name: 'Living room occupancy'
       device_class: occupancy
+      entity_id: sensor.time
