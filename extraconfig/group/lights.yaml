@@ -11,7 +11,7 @@
     entities:
      - light.fordren
      - light.bagdren
-
+     - switch.relay__button_3_1
 
   lights_livingroom:
     name: Lys i stuen

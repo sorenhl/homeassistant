@@ -107,3 +107,4 @@ input_slider: !include_dir_merge_named extraconfig/input_slider
 notify: !include extraconfig/standalonefiles/notify.yaml
 script: !include_dir_merge_named extraconfig/script
 sensor: !include_dir_merge_list extraconfig/sensor
+binary_sensor: !include_dir_merge_list extraconfig/binary_sensor

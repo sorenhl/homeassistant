@@ -160,3 +160,6 @@ https://plex.tv/devices.xml
 5. cp homebridge/config-sample.json /home/pi/.homebridge/config.json
 6. Copy from https://github.com/sorenhl/homebridge-homeassistant and remember to add dino.heidelarsen.dk in /etc/hosts to allow SSL certificate
 7. pm2 start /usr/local/bin/homebridge -n Homebridge"
+
+## Pi Others
+sudo shutdown -h now

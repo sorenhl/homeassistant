@@ -28,10 +28,10 @@
      - input_select.climate_nightmode_to
      - input_select.climate_nightmode_temperature
      - input_boolean.automation_climate_nightmode
-     - input_slider.climate_temperature_livingroom_day
-     - input_slider.climate_temperature_kitchen_day
-     - input_slider.climate_temperature_oliver_day
-     - input_slider.climate_temperature_hallway_day
-     - input_slider.climate_temperature_bathroom_day
-     - input_slider.climate_temperature_bedroom_day
-     - input_slider.climate_temperature_office_day  
+    # - input_slider.climate_temperature_livingroom_day
+    # - input_slider.climate_temperature_kitchen_day
+    # - input_slider.climate_temperature_oliver_day
+    # - input_slider.climate_temperature_hallway_day
+    # - input_slider.climate_temperature_bathroom_day
+    # - input_slider.climate_temperature_bedroom_day
+    # - input_slider.climate_temperature_office_day  

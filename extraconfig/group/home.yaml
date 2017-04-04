@@ -4,11 +4,11 @@
      - group.lights_livingroom
      - climate.danfoss_z_thermostat_014g0013_heating_1_3_1
      - climate.danfoss_z_thermostat_014g0013_heating_1_4_1
+     - binary_sensor.living_room_occupied
      - sensor.aeotec_zw100_multisensor_6_luminance_2_3
      - sensor.aeotec_zw100_multisensor_6_relative_humidity_2_5
      - sensor.aeotec_zw100_multisensor_6_temperature_2_1
      - sensor.aeotec_zw100_multisensor_6_ultraviolet_2_27
-     - sensor.fibaro_system_fgs223_double_relay_power_13_8
 
   room_oliver:
     name: Olivers værelse
