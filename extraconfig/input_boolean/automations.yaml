@@ -23,6 +23,11 @@
     icon: mdi:lightbulb
     initial: off
 
+  automation_disable_living_room_lights:
+    name: Deaktiver automatisk lys i stuen
+    icon: mdi:lightbulb
+    initial: off
+
 
   automation_climate_nightmode:
     name: Nattetilstand

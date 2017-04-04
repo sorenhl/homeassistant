@@ -7,6 +7,7 @@
      - input_boolean.automation_disable_door_notifications
      - input_boolean.automation_disable_linked_thermostats
      - input_boolean.automation_disable_scullary_lights
+     - input_boolean.automation_disable_living_room_lights
 
   alarm:
     name: Alarm

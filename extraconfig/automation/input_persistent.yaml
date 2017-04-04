@@ -12,6 +12,8 @@
    - platform: state
      entity_id: input_boolean.automation_disable_scullary_lights
    - platform: state
+     entity_id: input_boolean.automation_disable_living_room_lights
+   - platform: state
      entity_id: input_boolean.alarm_config_action_noice
    - platform: state
      entity_id: input_boolean.alarm_config_action_lights

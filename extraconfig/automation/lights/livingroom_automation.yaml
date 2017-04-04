@@ -1,0 +1,31 @@
+- alias: "Automatically turn on living room lights when occupied"
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.living_room_occupied
+    state: 'on'
+  condition:
+  - condition: state
+    entity_id: input_boolean.automation_disable_living_room_lights
+    state: 'off'
+  - condition: state
+    entity_id: sun.sun
+    state: 'below_horizon'
+  - condition: state
+    entity_id: switch.logic_soft_zhc5010_wall_switch_switch_11_0_3
+    state: 'off'
+  action:
+  - service: switch.turn_on
+    entity_id: switch.logic_soft_zhc5010_wall_switch_switch_11_0_3
+
+- alias: "Automatically turn off living room lights when not occupied"
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.living_room_occupied
+    state: 'off'
+  condition:
+  - condition: state
+    entity_id: input_boolean.automation_disable_living_room_lights
+    state: 'off'
+  action:
+  - service: switch.turn_off
+    entity_id: switch.logic_soft_zhc5010_wall_switch_switch_11_0_3
