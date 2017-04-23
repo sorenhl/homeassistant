@@ -85,7 +85,7 @@ mysensors:
 
 #bluetooth tracking
 device_tracker:
-  - platform: owntracks
+#  - platform: owntracks
   - platform: asuswrt
     host: 192.168.1.1
     username: admin
