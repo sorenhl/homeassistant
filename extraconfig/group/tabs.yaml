@@ -64,7 +64,7 @@
      - group.measurement
      - group.thermostats
      - group.online_check
-
+     - group.landmower
   buttons:
     name: Knapper
     icon: mdi:toggle-switch

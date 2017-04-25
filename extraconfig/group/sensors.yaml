@@ -76,5 +76,11 @@
      - climate.danfoss_z_thermostat_014g0013_heating_1_9_1
      - climate.danfoss_z_thermostat_014g0013_heating_1_10_1
   
-
+  landmower:
+    name: Plæneklipper
+    entities:
+    - sensor.landmover_state
+    - sensor.landmover_message
+    - sensor.landmover_battery
+    - sensor.landmover_error
 

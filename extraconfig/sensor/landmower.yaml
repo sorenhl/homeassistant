@@ -1,7 +1,71 @@
+
  - platform: rest
-   name: landmover_data
+   name: landmover_state
+   friendly_name: Status
    resource: http://192.168.1.113/jsondata.cgi
    method: GET
    username: admin
    authentication: basic
    password: !secret landmower
+   value_template: '{{ value_json.state }}'
+
+ - platform: rest
+   name: landmover_message
+   friendly_name: Besked
+   resource: http://192.168.1.113/jsondata.cgi
+   method: GET
+   username: admin
+   authentication: basic
+   password: !secret landmower
+   value_template: '{{ value_json.message }}'
+
+ - platform: rest
+   name: landmover_battery
+   friendly_name: Batteri
+   resource: http://192.168.1.113/jsondata.cgi
+   method: GET
+   username: admin
+   authentication: basic
+   password: !secret landmower
+   value_template: '{{ value_json.perc_batt }}'
+
+ - platform: rest
+   name: landmover_error
+   friendly_name: Fejlbesked
+   resource: http://192.168.1.113/jsondata.cgi
+   method: GET
+   username: admin
+   authentication: basic
+   password: !secret landmower
+   value_template: > 
+     {%- if value_json.allarmi[0] == 1 -%}
+       Blade blocked
+     {%- elif value_json.allarmi[1] == 1 -%}
+       Repositioning error
+     {%- elif value_json.allarmi[2] == 1 -%}
+       Outside working area
+     {%- elif value_json.allarmi[3] == 1 -%}
+       Blade blocked
+     {%- elif value_json.allarmi[4] == 1 -%}
+       Outside working area
+     {%- elif value_json.allarmi[5] == 1 -%}
+       Mower lifted
+     {%- elif value_json.allarmi[6] == 1 -%}
+       Error Code 6
+     {%- elif value_json.allarmi[7] == 1 -%}
+       Error Code 7
+     {%- elif value_json.allarmi[8] == 1 -%}
+       Error Code 8
+     {%- elif value_json.allarmi[9] == 1 -%}
+       Collision sensor blocked
+     {%- elif value_json.allarmi[10] == 1 -%}
+       Mower tilted
+     {%- elif value_json.allarmi[11] == 1 -%}
+       Charge error
+     {%- elif value_json.allarmi[12] == 1 -%}
+       Battery Error
+     {%- endif -%}
+
+
+       
+       
