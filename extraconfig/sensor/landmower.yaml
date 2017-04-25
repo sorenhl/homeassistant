@@ -1,7 +1,7 @@
 
  - platform: rest
    name: landmover_state
-   friendly_name: Status
+   friendly_name: 'Status'
    resource: http://192.168.1.113/jsondata.cgi
    method: GET
    username: admin
@@ -20,7 +20,7 @@
    value_template: >
      {%- if value_json.message != 'none' -%}
        {{ value_json.message }}
-     {%- endif %-}
+     {%- endif -%}
 
  - platform: rest
    name: landmover_battery
