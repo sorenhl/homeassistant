@@ -80,7 +80,7 @@
     name: Plæneklipper
     entities:
     - sensor.landmover_state
-    - sensor.landmover_message
     - sensor.landmover_battery
+    - sensor.landmover_message
     - sensor.landmover_error
 
