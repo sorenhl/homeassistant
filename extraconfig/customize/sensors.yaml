@@ -35,3 +35,19 @@
     icon: mdi:battery
   sensor.bathroom_thermostat_batt:
     icon: mdi:battery
+
+  #########################
+  # Landmower             #
+  #########################
+  sensor.landmover_state:
+    icon: mdi:ghost
+    friendly_name: 'Status'
+  sensor.landmover_message:
+    icon: mdi:message
+    friendly_name: 'Evt. besked'
+  sensor.landmover_error:
+    icon: mdi:message-alert
+    friendly_name: 'Evt. fejlbesked'
+  sensor.landmover_battery:
+    icon: mdi:battery
+    friendly_name: Batteriniveau

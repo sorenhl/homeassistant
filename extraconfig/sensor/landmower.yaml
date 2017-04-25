@@ -1,7 +1,6 @@
 
  - platform: rest
    name: landmover_state
-   friendly_name: 'Status'
    resource: http://192.168.1.113/jsondata.cgi
    method: GET
    username: admin
@@ -11,7 +10,6 @@
 
  - platform: rest
    name: landmover_message
-   friendly_name: 'Evt. besked'
    resource: http://192.168.1.113/jsondata.cgi
    method: GET
    username: admin
@@ -24,7 +22,6 @@
 
  - platform: rest
    name: landmover_battery
-   friendly_name: Batteriniveau
    resource: http://192.168.1.113/jsondata.cgi
    method: GET
    username: admin
@@ -35,7 +32,6 @@
 
  - platform: rest
    name: landmover_error
-   friendly_name: 'Evt. fejlbesked'
    resource: http://192.168.1.113/jsondata.cgi
    method: GET
    username: admin
