@@ -11,27 +11,31 @@
 
  - platform: rest
    name: landmover_message
-   friendly_name: Besked
+   friendly_name: 'Evt. besked'
    resource: http://192.168.1.113/jsondata.cgi
    method: GET
    username: admin
    authentication: basic
    password: !secret landmower
-   value_template: '{{ value_json.message }}'
+   value_template: >
+     {%- if value_json.message != 'none' -%}
+       {{ value_json.message }}
+     {%- endif %-}
 
  - platform: rest
    name: landmover_battery
-   friendly_name: Batteri
+   friendly_name: Batteriniveau
    resource: http://192.168.1.113/jsondata.cgi
    method: GET
    username: admin
    authentication: basic
    password: !secret landmower
    value_template: '{{ value_json.perc_batt }}'
+   unit_of_measurement: '%'
 
  - platform: rest
    name: landmover_error
-   friendly_name: Fejlbesked
+   friendly_name: 'Evt. fejlbesked'
    resource: http://192.168.1.113/jsondata.cgi
    method: GET
    username: admin
