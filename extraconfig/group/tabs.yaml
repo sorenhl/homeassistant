@@ -71,6 +71,8 @@
     view: yes
     entities:
      - group.buttons_livingroom
+     - group.buttons_bedroom
+     - group.buttons_bathroom
      - group.buttons_scullery
 
   media:

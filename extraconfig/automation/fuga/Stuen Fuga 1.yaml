@@ -1,9 +1,7 @@
-- alias: Fuga 1 - Loftlys taend
+- alias: livingroom_fuga1_knap1_on
   trigger:
   - platform: state
-    entity_id: switch.logic_soft_zhc5010_wall_switch_switch_11_0_2
-    from: 'off'
-    to: 'on'
+    entity_id: switch.logic_soft_zhc5010_wall_switch_switch_17_0_2
   condition:
    - condition: state
      entity_id: light.lampe_over_spisebord
@@ -14,45 +12,14 @@
     data:
       rgb_color: [255,202,122]
       brightness: 181
-- alias: Fuga 1 - Loftlys sluk
+- alias: livingroom_fuga1_knap1_off
   trigger:
     - platform: state
-      entity_id: switch.logic_soft_zhc5010_wall_switch_switch_11_0_2
-      from: 'on'
-      to: 'off'
+      entity_id: switch.logic_soft_zhc5010_wall_switch_switch_17_0_2
+  condition:
+   - condition: state
+     entity_id: light.lampe_over_spisebord
+     state: 'on'
   action:
     service: light.turn_off
     entity_id: light.lampe_over_spisebord
-
-- alias: Fuga 1 - Lampe over spisebord sluk
-  trigger:
-    - platform: state
-      entity_id: light.lampe_over_spisebord
-      from: 'on'
-      to: 'off'
-  action:
-    service: switch.turn_off
-    entity_id: switch.logic_soft_zhc5010_wall_switch_switch_11_0_2
-
-- alias: Fuga 1 - Lampe over spisebord tænd
-  trigger:
-    - platform: state
-      entity_id: light.lampe_over_spisebord
-      from: 'off'
-      to: 'on'
-  action:
-    service: switch.turn_on
-    entity_id: switch.logic_soft_zhc5010_wall_switch_switch_11_0_2
-
-- alias: Sikre lys i stuen er hvidt
-  trigger:
-    - platform: state
-      entity_id: light.lampe_over_spisebord
-      from: 'off'
-      to: 'on'
-  action:
-    service: light.turn_on 
-    entity_id: light.lampe_over_spisebord
-    data:
-      rgb_color: [255,202,122]
-      brightness: 181    

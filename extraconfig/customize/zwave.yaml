@@ -40,17 +40,50 @@
   switch.logic_soft_zhc5010_wall_switch_switch_11_0: #En eller anden generel ting
     hidden: true
   switch.logic_soft_zhc5010_wall_switch_switch_11_0_2:
-    friendly_name: Stuen 1
+    friendly_name: Soveværelset 1
     icon: mdi:radiobox-marked
+    homebridge: true
   switch.logic_soft_zhc5010_wall_switch_switch_11_0_3:
-    friendly_name: Stuen 2
+    friendly_name: Soveværelset 2
     icon: mdi:radiobox-marked
   switch.logic_soft_zhc5010_wall_switch_switch_11_0_4:
-    friendly_name: Stuen 3
+    friendly_name: Soveværelset 3
     icon: mdi:radiobox-marked
   switch.logic_soft_zhc5010_wall_switch_switch_11_0_5:
+    friendly_name: Soveværelset 4
+    icon: mdi:radiobox-marked
+
+  switch.logic_soft_zhc5010_wall_switch_switch_16_0: #En eller anden generel ting
+    hidden: true
+  switch.logic_soft_zhc5010_wall_switch_switch_16_0_2:
+    friendly_name: Badeværelset 1
+    icon: mdi:radiobox-marked
+    homebridge: true
+  switch.logic_soft_zhc5010_wall_switch_switch_16_0_3:
+    friendly_name: Badeværelset 2
+    icon: mdi:radiobox-marked
+  switch.logic_soft_zhc5010_wall_switch_switch_16_0_4:
+    friendly_name: Badeværelset 3
+    icon: mdi:radiobox-marked
+  switch.logic_soft_zhc5010_wall_switch_switch_16_0_5:
+    friendly_name: Badeværelset 4
+    icon: mdi:radiobox-marked
+
+  switch.logic_soft_zhc5010_wall_switch_switch_17_0: #En eller anden generel ting
+    hidden: true
+  switch.logic_soft_zhc5010_wall_switch_switch_17_0_2:
+    friendly_name: Stuen 1
+    icon: mdi:radiobox-marked
+  switch.logic_soft_zhc5010_wall_switch_switch_17_0_3:
+    friendly_name: Stuen 2
+    icon: mdi:radiobox-marked
+  switch.logic_soft_zhc5010_wall_switch_switch_17_0_4:
+    friendly_name: Stuen 3
+    icon: mdi:radiobox-marked
+  switch.logic_soft_zhc5010_wall_switch_switch_17_0_5:
     friendly_name: Stuen 4
     icon: mdi:radiobox-marked
+
 
   #########################
   # RALÆER                #

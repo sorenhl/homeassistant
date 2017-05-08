@@ -1,7 +1,7 @@
 - alias: livingroom_fuga1_knap4_on
   trigger:
   - platform: state
-    entity_id: switch.logic_soft_zhc5010_wall_switch_switch_11_0_5
+    entity_id: switch.logic_soft_zhc5010_wall_switch_switch_17_0_5
     from: 'off'
     to: 'on'
   action:
@@ -15,7 +15,7 @@
 - alias: livingroom_fuga1_knap4_off
   trigger:
   - platform: state
-    entity_id: switch.logic_soft_zhc5010_wall_switch_switch_11_0_5
+    entity_id: switch.logic_soft_zhc5010_wall_switch_switch_17_0_5
     from: 'on'
     to: 'off'
   action:

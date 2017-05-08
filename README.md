@@ -71,23 +71,18 @@ sudo apt-get install pure-ftpd
 
 ### Start as a service
 ```sh
-sudo su -c 'cat <<EOF >> /etc/systemd/system/home-assistant@pi.service
-[Unit]
-Description=Home Assistant
-After=network.target
+# Links
+sudo ln -s /srv/homeassistant/homeassistant_venv/lib/python3.4/site-packages/libopenzwave-0.3.2-py3.4-linux-armv7l.egg/config /srv/homeassistant/src/open-zwave-control-panel/config
+sudo ln -s /home/homeassistant/.homeassistant/zwcfg_0xcc97b170.xml /srv/homeassistant/src/open-zwave-control-panel/zwcfg_0xcc97b170.xml
 
-[Service]
-Type=simple
-User=%i
-ExecStart=/usr/local/bin/hass
+#Start control panel
+cd /srv/homeassistant/src/open-zwave-control-panel/
+sudo systemctl stop home-assistant.service
+sudo ./ozwcp -p 8888
 
-[Install]
-WantedBy=multi-user.target
-EOF'
-sudo systemctl --system daemon-reload
-sudo systemctl enable home-assistant@pi
-sudo systemctl start home-assistant@pi
-sudo systemctl status home-assistant@pi -l
+#Start home assistant
+sudo systemctl start home-assistant.service
+
  ```
 
 ### Sonos api
