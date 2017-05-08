@@ -6,6 +6,8 @@
   - condition: state
     entity_id: light.lampe_i_stuen
     state: 'off'
+  - condition: template
+    value_template: "{{ trigger.from_state.state != trigger.to_state.state }}"
   action:
   - service: light.turn_on 
     entity_id: light.lampe_i_stuen
@@ -22,6 +24,8 @@
   - condition: state
     entity_id: light.lampe_i_stuen
     state: 'on'
+  - condition: template
+    value_template: "{{ trigger.from_state.state != trigger.to_state.state }}"
   action:
   - service: light.turn_off
     entity_id: light.lampe_i_stuen
